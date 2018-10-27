@@ -65,7 +65,7 @@ publish:
   script:
     - sudo rm -rf -r /var/www/jens-uwe-loessl.de
     - mkdir /var/www/jens-uwe-loessl.de
-    - cp -r ~/web/build/jens-uwe-loessl.de/$CI_COMMIT_REF_NAME/jens-uwe-loessl.de/dist /var/www/jens-uwe-loessl.de
+    - cp -r ~/web/build/jens-uwe-loessl.de/$CI_COMMIT_REF_NAME/jens-uwe-loessl.de/dist/ /var/www/jens-uwe-loessl.de/
     - cp ~/web/build/jens-uwe-loessl.de/$CI_COMMIT_REF_NAME/jens-uwe-loessl.de/.htaccess /var/www/jens-uwe-loessl.de/.htaccess
     - sudo chmod 777 /var/www/jens-uwe-loessl.de -R
   environment:
