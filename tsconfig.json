@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "outDir": "./built/",
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es5",
+    "baseUrl": "./",
+    "paths": {
+      "@src/*": [
+        "src/*"
+      ]
+    },
+    "lib": [
+      "dom",
+      "es5",
+      "es2015.collection",
+      "es2015.promise"
+    ]
+  },
+  "include": [
+    "./src/**/*",
+    "./test/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "types": [
+    "jest"
+  ]
+}
