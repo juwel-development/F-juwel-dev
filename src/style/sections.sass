@@ -3,10 +3,28 @@ section
   color: white
 
 .index-section
-  background-color: $color_blueberry
   display: flex
-  justify-content: center
-  align-items: center
-  flex-direction: column
+  flex-flow: row wrap
+  padding: 0
+  margin: 0
+  .left-column
+    background-color: $color_blueberry
+    max-width: 60%
+    flex-direction: column
+  .sidebar
+    width: 40%
+    display: flex
+    flex-direction: column
+    .item
+      display: flex
+      width: 100%
+      align-content: center
+      align-items: center
+      flex-grow: 1
+      a
+        color: $color_blueberry
+        text-decoration: none
+        font-size: 3rem
+        margin: auto
   p
-  font-size: 3rem
+    font-size: 3rem
