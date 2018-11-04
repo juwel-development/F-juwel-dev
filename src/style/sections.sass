@@ -8,12 +8,25 @@ section
   padding: 0
   margin: 0
   .left-column
-    background-color: $color_blueberry
-    max-width: 60%
-    flex-direction: column
-  .sidebar
-    width: 40%
     display: flex
+    background-color: $color_blueberry
+    background: -moz-linear-gradient(-45deg, darken($color_blueberry, 10%) 0%, $color_blueberry 44%, $color_blueberry 100%)
+    background: -webkit-linear-gradient(-45deg, darken($color_blueberry, 10%) 0%, $color_blueberry 44%, $color_blueberry 100%)
+    background: linear-gradient(135deg, darken($color_blueberry, 10%) 0%, $color_blueberry 44%, lighten($color_blueberry, 10%) 100%)
+    flex-grow: 10
+    flex-direction: column
+    flex-basis: 500px
+    align-content: center
+    align-items: center
+    overflow: hidden
+    *
+      margin: auto
+      padding: 7rem
+  .sidebar
+    width: 100%
+    display: flex
+    flex-basis: 350px
+    flex-grow: 1
     flex-direction: column
     .item
       display: flex
@@ -22,7 +35,8 @@ section
       align-items: center
       flex-grow: 1
       a
-        color: $color_blueberry
+        padding: 3rem
+        color: darken(white, 60%)
         text-decoration: none
         font-size: 3rem
         margin: auto

@@ -1,7 +1,7 @@
 <template>
     <section class="index-section">
         <div class="left-column">
-            <h1>I love creating apps that scale.</h1>
+            <h1>I <i class="fa fa-heart"></i> creating apps that scale.</h1>
             <p>{coming soon}</p>
         </div>
         <div class="sidebar">
