@@ -7,9 +7,10 @@
         <p>Faster websites will rank better in search engines like Google, Bing and Yahoo. But moving calculation from
             the server to the client, will lower the costs you will spend on infrastructure, when your application is
             getting popular.</p>
-        <h2>React flexible on changes on the market environment</h2>
+        <h2>React flexible to changes on the market environment</h2>
         <p>By modularizing and encapsulating individual software parts, they can be easily replaced. Separating the user
-            interface from the business logic will it make easy to change technologies and to maintain.</p>
+            interface from the business logic will bring you in the position to change technologies or small parts based
+            on market development.</p>
     </section>
 </template>
 
