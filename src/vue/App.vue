@@ -1,17 +1,20 @@
 <template>
     <div class="app">
-        <IndexSection />
+        <IndexSection/>
+        <a id="why"></a>
+        <WhySection/>
     </div>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
-    import IndexSection from './sections/Index'
-
+	import IndexSection from './sections/Index';
+	import WhySection from './sections/Why';
 
 	export default Vue.extend({
-        components:{
-        	IndexSection
-        }
-    });
+		components: {
+			IndexSection,
+			WhySection
+		}
+	});
 </script>

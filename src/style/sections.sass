@@ -1,5 +1,6 @@
 section
-  height: 100%
+  min-height: calc(100% - 6rem)
+  padding: 3rem 2rem
   color: white
 
 .index-section
@@ -7,6 +8,7 @@ section
   flex-flow: row wrap
   padding: 0
   margin: 0
+  min-height: 100%
   .left-column
     display: flex
     background-color: $color_blueberry
@@ -19,9 +21,10 @@ section
     align-content: center
     align-items: center
     overflow: hidden
+    text-align: center
     *
       margin: auto
-      padding: 7rem
+      padding: 2rem
     i
       padding: 0
   .sidebar
@@ -36,9 +39,14 @@ section
       align-content: center
       align-items: center
       flex-grow: 1
+      flex-direction: column
+      color: darken(white, 60%)
+      p
+        margin: 1rem 0
+        font-size: 1.8rem
       a
         padding: 3rem
-        color: darken(white, 60%)
+        color: inherit
         text-decoration: none
         font-size: 3rem
         margin: auto
