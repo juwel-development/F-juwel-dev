@@ -1,6 +1,6 @@
 const path = require('path');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
@@ -13,9 +13,9 @@ function getPlugins () {
 		new BundleAnalyzerPlugin({
 			analyzerMode: 'static'
 		}),
-		// new CopyWebpackPlugin([
-		// 	{from: 'resources/images', to: 'resources/images'}
-		// ]),
+		new CopyWebpackPlugin([
+			{from: 'resources/images', to: 'resources/images'}
+		]),
 		new HtmlWebpackPlugin({
 			title: 'Jens-Uwe Loessl',
 			meta: {

@@ -1,7 +1,8 @@
 section
-  min-height: calc(100% - 6rem)
+  min-height: calc(100% - 5.2rem)
   padding: 3rem 2rem
   color: white
+  font-size: $base_font_size
 
 .index-section
   display: flex
@@ -10,7 +11,6 @@ section
   margin: 0
   min-height: 100%
   .left-column
-    display: flex
     background-color: $color_blueberry
     background: -moz-linear-gradient(-45deg, darken($color_blueberry, 10%) 0%, $color_blueberry 44%, $color_blueberry 100%)
     background: -webkit-linear-gradient(-45deg, darken($color_blueberry, 10%) 0%, $color_blueberry 44%, $color_blueberry 100%)
@@ -29,7 +29,6 @@ section
       padding: 0
   .sidebar
     width: 100%
-    display: flex
     flex-basis: 350px
     flex-grow: 1
     flex-direction: column
@@ -40,7 +39,7 @@ section
       align-items: center
       flex-grow: 1
       flex-direction: column
-      color: darken(white, 60%)
+      color: darken(white, 5%)
       p
         margin: 1rem 0
         font-size: 1.8rem
@@ -48,7 +47,21 @@ section
         padding: 3rem
         color: inherit
         text-decoration: none
-        font-size: 3rem
+        font-size: 2.6rem
         margin: auto
   p
     font-size: 3rem
+
+.how-section
+  flex-flow: row wrap
+  .left-column
+    min-height: 100%
+    flex-basis: 250px
+    margin: 2rem
+  .right-column
+    flex-grow: 1
+    flex-basis: 500px
+  img
+    width: 250px
+    height: 250px
+    border-radius: 50%

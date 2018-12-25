@@ -1,13 +1,12 @@
 <template>
     <section class="index-section">
-        <div class="left-column">
+        <div class="column left-column">
             <h1>I <i class="fa fa-heart"></i> creating apps that scale.</h1>
         </div>
-        <div class="sidebar">
-            <div class="item bg-citrus"><a href="#why">Why</a>
+        <div class="column sidebar">
+            <div class="item bg-citrus"><a href="#boost-your-sales">Boost your sales</a>
             </div>
-            <div class="item bg-apple"><a href="#how">How</a>
-                <p>{coming soon}</p>
+            <div class="item bg-apple"><a href="#turn-your-ideas-into-reality">Turn your ideas into reality</a>
             </div>
             <div class="item bg-apricot"><a href="#technologie">Technology</a>
                 <p>{coming soon}</p>
