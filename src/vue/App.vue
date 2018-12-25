@@ -1,10 +1,6 @@
 <template>
     <div class="app">
-        <IndexSection/>
-        <a id="boost-your-sales"></a>
-        <WhySection/>
-        <a id="turn-your-ideas-into-reality"></a>
-        <HowSection/>
+        <router-view></router-view>
     </div>
 </template>
 
