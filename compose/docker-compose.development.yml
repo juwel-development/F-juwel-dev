@@ -1,0 +1,10 @@
+version: '3'
+services:
+  jens-uwe-loessl.de:
+    build: ..
+    command: npm run dev
+    volumes:
+      - "..:/usr/src/app/"
+      - /usr/src/app/node_modules
+    ports:
+      - "8080:3000"

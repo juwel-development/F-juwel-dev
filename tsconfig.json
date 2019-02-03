@@ -1,34 +1,19 @@
 {
   "compilerOptions": {
-    "outDir": "./built/",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "preserve",
+    "lib": ["dom", "es2017"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "target": "es5",
-    "baseUrl": "./",
-    "paths": {
-      "@src/*": [
-        "src/*"
-      ]
-    },
-    "lib": [
-      "dom",
-      "es5",
-      "es2015.collection",
-      "es2015.promise"
-    ]
-  },
-  "include": [
-    "./src/**/*",
-    "./test/**/*"
-  ],
-  "exclude": [
-    "node_modules"
-  ],
-  "types": [
-    "jest"
-  ]
+    "target": "esnext"
+  }
 }
