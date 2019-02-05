@@ -21,6 +21,6 @@ build:
     - cd $BASE_DIR
     - git pull origin $CI_COMMIT_REF_NAME
     - echo build running
-    - docker-compose -f compose/docker-compose.development.yml up
+    - docker-compose -f compose/docker-compose.production.yml up
   only:
     - master
