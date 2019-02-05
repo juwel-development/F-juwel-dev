@@ -9,7 +9,7 @@ variables:
   PATCH: "0"
 
 build:
-  stage: build
+  stage: up
   script:
     - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
     - echo $ENV_DIR
