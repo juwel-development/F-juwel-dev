@@ -1,27 +1,39 @@
 stages:
-  - up
+  - build
+  - deploy
 
 variables:
-  ENV_DIR: "/home/gitlab-runner/web/build/jens-uwe-loessl.de"
-  BASE_DIR: "$ENV_DIR/$CI_COMMIT_REF_NAME/jens-uwe-loessl.de"
-  MAJOR: "1"
-  MINOR: "0"
-  PATCH: "0"
+  DOCKER_REGISTRY: docker.x-pensive.de
+  DOCKER_USER: docker
+  DOCKER_USER_PASSWORD: MXATTCxk6uQ65MZV
+  IMAGE_NAME: jens-uwe-loessl.de
+  DOCKER_IMAGE_NAME_FULL: $DOCKER_REGISTRY/$IMAGE_NAME
+  VERSION_MAJOR: 1
+  VERSION_MINOR: 0
 
 build:
-  stage: up
+  stage: build
   script:
-    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-    - echo $ENV_DIR
-    - cd $ENV_DIR
-    - sudo rm -rf -r $CI_COMMIT_REF_NAME
-    - mkdir $CI_COMMIT_REF_NAME
-    - cd $CI_COMMIT_REF_NAME
-    - git clone git@gitlab.x-pensive.de:Jens/jens-uwe-loessl.de.git
-    - cd $BASE_DIR
-    - git pull origin $CI_COMMIT_REF_NAME
-    - echo build running
-    - docker-compose -f compose/docker-compose.production.yml stop
-    - docker-compose -f compose/docker-compose.production.yml up --build -d
+    - docker login -u $DOCKER_USER -p $DOCKER_USER_PASSWORD $DOCKER_REGISTRY
+    - docker build -t $DOCKER_IMAGE_NAME_FULL:latest .
+    - docker push $DOCKER_IMAGE_NAME_FULL:latest
+    - docker build -t $DOCKER_IMAGE_NAME_FULL:$VERSION_MAJOR .
+    - docker push $DOCKER_IMAGE_NAME_FULL:$VERSION_MAJOR
+    - docker build -t $DOCKER_IMAGE_NAME_FULL:$VERSION_MAJOR.$VERSION_MINOR .
+    - docker push $DOCKER_IMAGE_NAME_FULL:$VERSION_MAJOR.$VERSION_MINOR
+  only:
+    - master
+
+deploy:
+  variables:
+    PROD_MACHINE: 195.128.100.119
+    PROD_USER: gitlab
+  stage: deploy
+  script:
+    - ssh $PROD_USER@$PROD_MACHINE -t "docker login -u $DOCKER_USER -p $DOCKER_USER_PASSWORD $DOCKER_REGISTRY
+      && docker stop $IMAGE_NAME || true
+      && docker rm $IMAGE_NAME || true
+      && docker pull $DOCKER_IMAGE_NAME_FULL:$VERSION_MAJOR
+      && docker run -dit --name=$IMAGE_NAME -p 30030:3000 --restart=unless-stopped $DOCKER_IMAGE_NAME_FULL yarn start"
   only:
     - master

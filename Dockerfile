@@ -1,15 +1,9 @@
-FROM node:10-alpine as base
+FROM node:10-alpine
 
 # Create app directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # Install app dependencies
-COPY package.json .
-COPY yarn.lock .
-RUN yarn
-
-FROM base as production
-WORKDIR /usr/src/app
-
-COPY . .
+COPY . ./
+RUN yarn && yarn run build
