@@ -9,7 +9,7 @@ variables:
   IMAGE_NAME: jens-uwe-loessl.de
   DOCKER_IMAGE_NAME_FULL: $DOCKER_REGISTRY/$IMAGE_NAME
   VERSION_MAJOR: 1
-  VERSION_MINOR: 0
+  VERSION_MINOR: 1
 
 build:
   stage: build
@@ -34,6 +34,8 @@ deploy:
       && docker stop $IMAGE_NAME || true
       && docker rm $IMAGE_NAME || true
       && docker pull $DOCKER_IMAGE_NAME_FULL:$VERSION_MAJOR
-      && docker run -dit --name=$IMAGE_NAME -p 30030:3000 --restart=unless-stopped $DOCKER_IMAGE_NAME_FULL yarn start"
+      && docker run -dit --name=$IMAGE_NAME -p 30030:3000 --restart=unless-stopped
+      -e VIRTUAL_HOST=jens-uwe-loessl.de -e LETSENCRYPT_HOST=jens-uwe-loessl.de -e LETSENCRYPT_EMAIL=mail@jens-uwe-loessl.de
+      --network=webproxy $DOCKER_IMAGE_NAME_FULL yarn start"
   only:
     - master
