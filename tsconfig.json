@@ -1,19 +1,27 @@
 {
   "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "target": "es6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "es6",
+      "webworker"
+    ],
     "allowJs": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "jsx": "preserve",
-    "lib": ["dom", "es2017"],
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "noEmit": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "preserveConstEnums": true,
-    "removeComments": false,
-    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "jsx": "react-jsx",
     "sourceMap": true,
-    "strict": true,
-    "target": "esnext"
+    "baseUrl": "./src"
+  },
+  "globals": {
+    "ENV": "string"
   }
 }

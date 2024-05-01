@@ -1,3 +1,7 @@
-node_modules
-.next
-yarn-error.log
+node_modules/
+/test-results/
+/playwright-report/
+/playwright/.cache/
+**/*.log
+
+.env
