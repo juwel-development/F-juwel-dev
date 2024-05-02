@@ -12,7 +12,10 @@ import bg from './bg.png';
 const HomePage: FunctionComponent = () => {
   return (
     <>
-      <div className="w-screen h-screen bg-repeat -z-10 select-none" style={{ backgroundImage: `url(${bg}` }}>
+      <div
+        className="absolute top-0 bottom-0 right-0 left-0 bg-repeat -z-10 select-none overflow-auto"
+        style={{ backgroundImage: `url(${bg}` }}
+      >
         <Container>
           <Section>
             <FadeIn duration={1.5}>
