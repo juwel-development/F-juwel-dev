@@ -69,10 +69,11 @@ module.exports = {
       exclude: /node_modules/,
     }),
     new HtmlWebpackPlugin({
-      title: 'Jens-Uwe Lössl',
+      title: 'JUWEL Development',
       meta: {
         viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
       },
+      favicon: './src/favicon.ico',
     }),
     //		new CopyPlugin({
     //			patterns: [{from: 'res', to: 'res'}]
@@ -90,7 +91,6 @@ module.exports = {
         USE_EMULATOR: process.env.USE_EMULATOR,
         LOG_LEVEL: process.env.LOG_LEVEL,
         ENVIRONMENT: isProduction ? 'production' : 'development',
-        LOG_ROCKET_APP_ID: process.env.LOG_ROCKET_APP_ID,
         USE_IN_MEMORY_REPOSITORY: process.env.USE_IN_MEMORY_REPOSITORY,
       }),
     }),
@@ -99,7 +99,9 @@ module.exports = {
       analyzerHost: '0.0.0.0',
       openAnalyzer: false,
     }),
-    new webpack.optimize.MinChunkSizePlugin({ minChunkSize: isProduction ? 30000 : 0 }),
+    new webpack.optimize.MinChunkSizePlugin({
+      minChunkSize: isProduction ? 30000 : 0,
+    }),
     //		new WorkboxPlugin.InjectManifest({
     //			swSrc: './src/sw.ts',
     //		})
