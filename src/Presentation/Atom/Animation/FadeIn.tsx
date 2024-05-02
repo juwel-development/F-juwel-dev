@@ -11,7 +11,7 @@ interface IProps {
 export const FadeIn: FunctionComponent<PropsWithChildren<IProps>> = ({ children, delay = 0, duration = 0.5 }) => {
   return (
     <MotionConfig transition={{ duration, delay }}>
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         {children}
       </motion.div>
     </MotionConfig>
