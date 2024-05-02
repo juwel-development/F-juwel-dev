@@ -1,4 +1,4 @@
-import '@fontsource/roboto';
+import '@fontsource/lato';
 import 'reflect-metadata';
 
 import { initializeApp } from 'firebase/app';

@@ -11,7 +11,7 @@
     "start": "node_modules/.bin/webpack serve --env dev"
   },
   "dependencies": {
-    "@fontsource/roboto": "^5.0.3",
+    "@fontsource/lato": "^5.0.21",
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.17",
     "@tanstack/react-router": "^1.31.5",
