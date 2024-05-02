@@ -23,7 +23,7 @@ const HomePage: FunctionComponent = () => {
           <FadeIn duration={2} delay={0.6}>
             <H1 align="center">
               I craft software
-              <FadeIn delay={1.6} duration={0.4}>
+              <FadeIn delay={1.8} duration={0.4}>
                 .
               </FadeIn>
             </H1>
