@@ -11,36 +11,42 @@ import bg from './bg.png';
 
 const HomePage: FunctionComponent = () => {
   return (
-    <>
-      <div
-        className="absolute top-0 bottom-0 right-0 left-0 bg-repeat -z-10 select-none overflow-auto"
-        style={{ backgroundImage: `url(${bg}` }}
-      >
+    <div
+      className="absolute top-0 bottom-0 right-0 left-0 bg-repeat -z-10 select-none overflow-auto"
+      style={{ backgroundImage: `url(${bg}` }}
+    >
+      <Section.Root size="screen">
         <Container>
-          <Section>
-            <FadeIn duration={1.5}>
-              <Logo />
-            </FadeIn>
-            <FadeIn duration={2} delay={0.6}>
-              <H1 align="center">I craft software</H1>
-            </FadeIn>
-          </Section>
-          <Section>
-            <Grid>
-              <FadeIn duration={2} delay={1.2}>
-                <Box>Previous projects</Box>
+          <FadeIn duration={1.5}>
+            <Logo size="full" />
+          </FadeIn>
+          <FadeIn duration={2} delay={0.6}>
+            <H1 align="center">
+              I craft software
+              <FadeIn delay={1.6} duration={0.4}>
+                .
               </FadeIn>
-              <FadeIn duration={2} delay={1.5}>
-                <Box>Knowledge</Box>
-              </FadeIn>
-              <FadeIn duration={2} delay={1.8}>
-                <Box>About me</Box>
-              </FadeIn>
-            </Grid>
-          </Section>
+            </H1>
+          </FadeIn>
         </Container>
-      </div>
-    </>
+      </Section.Root>
+      <Section.Root size="screen">
+        <Container>
+          <H1>What are you looking for?</H1>
+          <Grid>
+            <FadeIn duration={2} delay={0.2}>
+              <Box>a software architect</Box>
+            </FadeIn>
+            <FadeIn duration={2} delay={0.8}>
+              <Box>a full-stack developer</Box>
+            </FadeIn>
+            <FadeIn duration={2} delay={1.4}>
+              <Box>inspirational knowledge</Box>
+            </FadeIn>
+          </Grid>
+        </Container>
+      </Section.Root>
+    </div>
   );
 };
 
