@@ -9,7 +9,6 @@ import type { FunctionComponent } from 'react';
 import bg from './bg.png';
 
 const HomePage: FunctionComponent = () => {
-  console.log(bg);
   return (
     <>
       <div className="w-screen h-screen bg-repeat -z-10" style={{ backgroundImage: `url(${bg}` }}>
