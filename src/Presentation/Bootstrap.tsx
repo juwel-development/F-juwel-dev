@@ -3,6 +3,7 @@ import 'Presentation/Style/main.css';
 import { RouterProvider } from '@tanstack/react-router';
 import type { FunctionComponent } from 'react';
 import { StrictMode, Suspense } from 'react';
+import AnimatedCursor from 'react-animated-cursor';
 import { createRoot } from 'react-dom/client';
 
 import { router } from './Routing/RouteDefinition';
@@ -11,6 +12,7 @@ const AppComponent: FunctionComponent = () => {
   return (
     <StrictMode>
       <Suspense>
+        <AnimatedCursor innerSize={16} outerSize={8} color="100, 180, 255" />
         <RouterProvider router={router} />
       </Suspense>
     </StrictMode>

@@ -21,6 +21,7 @@
     "framer-motion": "^11.1.7",
     "lodash": "^4.17.19",
     "react": "^18.0.0",
+    "react-animated-cursor": "^2.11.2",
     "react-dom": "^18.0.0",
     "react-helmet": "^6.1.0",
     "react-intl": "^6.0.3",
