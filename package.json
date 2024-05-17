@@ -1,19 +1,20 @@
 {
-  "name": "depot-tracker-frontend",
+  "name": "juwel-dev",
   "version": "0.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
   "scripts": {
-    "build:prod": "node_modules/.bin/webpack --config webpack.config.js --env prod",
-    "build:dev": "node_modules/.bin/webpack --config webpack.config.js --env dev",
+    "build:prod": "webpack --config webpack.config.js --env prod",
+    "build:dev": "webpack --config webpack.config.js --env dev",
     "lint": "eslint . --ext .ts,.tsx",
-    "start": "node_modules/.bin/webpack serve --env dev"
+    "start": "webpack serve --env dev"
   },
   "dependencies": {
     "@fontsource/lato": "^5.0.21",
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.17",
+    "@juwel-development/beautiful-logger": "^1.0.0",
     "@tanstack/react-router": "^1.31.5",
     "@types/react-helmet": "^6.1.11",
     "class-variance-authority": "^0.7.0",
