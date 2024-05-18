@@ -13,6 +13,12 @@ const flexRoot = cva('flex gap-6', {
       nowrap: 'flex-nowrap',
       reverse: 'flex-wrap-reverse',
     },
+    items: {
+      start: 'items-start',
+      end: 'items-end',
+      center: 'items-center',
+      stretch: 'items-stretch',
+    },
     justify: {
       normal: 'justify-normal',
       start: 'justify-start',
@@ -34,8 +40,9 @@ const FlexRoot: FunctionComponent<PropsWithChildren<VariantProps<typeof flexRoot
   direction,
   wrap,
   justify,
+  items,
 }) => {
-  return <div className={flexRoot({ direction, wrap, justify })}>{children}</div>;
+  return <div className={flexRoot({ direction, wrap, justify, items })}>{children}</div>;
 };
 
 const flexItem = cva('', {

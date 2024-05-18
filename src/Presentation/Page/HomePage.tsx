@@ -33,17 +33,17 @@ const HomePage: FunctionComponent = () => {
       <FullScreenSection heading="What are you looking for?">
         <Flex.Root justify="between">
           <Flex.Item>
-            <FadeIn duration={2} delay={0.2}>
+            <FadeIn duration={1.5} delay={0.2}>
               <LinkBox>software architecture</LinkBox>
             </FadeIn>
           </Flex.Item>
           <Flex.Item>
-            <FadeIn duration={2} delay={0.8}>
+            <FadeIn duration={1.5} delay={0.6}>
               <LinkBox>software development</LinkBox>
             </FadeIn>
           </Flex.Item>
           <Flex.Item>
-            <FadeIn duration={2} delay={1.4}>
+            <FadeIn duration={1.5} delay={1}>
               <LinkBox>knowledge</LinkBox>
             </FadeIn>
           </Flex.Item>
