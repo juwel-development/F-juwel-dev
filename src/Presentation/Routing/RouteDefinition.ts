@@ -13,6 +13,14 @@ const homeRoute = createRoute({
 
 rootRoute.addChildren([homeRoute]);
 
+const softwareDevelopmentRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: PATH.SOFTWARE_DEVELOPMENT,
+  component: React.lazy(() => import('Presentation/Page/SoftwareDevelopmentPage')),
+});
+
+homeRoute.addChildren([softwareDevelopmentRoute]);
+
 export const router = createRouter({
   routeTree: rootRoute,
 });

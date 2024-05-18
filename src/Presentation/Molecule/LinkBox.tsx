@@ -3,14 +3,16 @@ import { useAction } from '@juwel-development/react-observable-tools';
 import { Box } from 'Presentation/Atom/Layout/Box';
 import { Flex } from 'Presentation/Atom/Layout/Flex';
 import type { FunctionComponent, PropsWithChildren } from 'react';
+import type { Subject } from 'rxjs';
 
 interface IProps {
   path?: string;
+  redirect$?: Subject<string>;
 }
 
-export const LinkBox: FunctionComponent<PropsWithChildren<IProps>> = ({ children, path }) => {
+export const LinkBox: FunctionComponent<PropsWithChildren<IProps>> = ({ children, path, redirect$ }) => {
   const onClick$ = useAction(() => {
-    Logger.getLogger('LinkBox').info(`Clicked on LinkBox with path: ${path}`);
+    path && redirect$?.next(path);
   });
 
   return (

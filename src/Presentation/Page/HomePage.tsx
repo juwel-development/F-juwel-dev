@@ -1,15 +1,23 @@
+import { Logger } from '@juwel-development/beautiful-logger';
+import { useAction } from '@juwel-development/react-observable-tools';
 import { FadeIn } from 'Presentation/Atom/Animation/FadeIn';
 import { Container } from 'Presentation/Atom/Layout/Container';
 import { Flex } from 'Presentation/Atom/Layout/Flex';
 import { Logo } from 'Presentation/Atom/Logo/Logo';
 import { H1 } from 'Presentation/Atom/Typography/H1';
+import { P } from 'Presentation/Atom/Typography/P';
 import { FullScreenSection } from 'Presentation/Molecule/FullScreenSection';
 import { LinkBox } from 'Presentation/Molecule/LinkBox';
+import { PATH } from 'Presentation/Routing/Path';
 import type { FunctionComponent } from 'react';
 
 import bg from './bg.png';
 
 const HomePage: FunctionComponent = () => {
+  const redirect$ = useAction((param: string) => {
+    Logger.getLogger('HomePage').info(`Redirecting to ${param}`);
+  }, []);
+
   return (
     <div
       className="absolute top-0 bottom-0 right-0 left-0 bg-repeat -z-10 select-none overflow-auto"
@@ -34,17 +42,25 @@ const HomePage: FunctionComponent = () => {
         <Flex.Root justify="between">
           <Flex.Item>
             <FadeIn duration={1.5} delay={0.2}>
-              <LinkBox>software architecture</LinkBox>
+              <LinkBox>
+                <P>software architecture </P>
+                <P>(coming soon)</P>
+              </LinkBox>
             </FadeIn>
           </Flex.Item>
           <Flex.Item>
             <FadeIn duration={1.5} delay={0.6}>
-              <LinkBox>software development</LinkBox>
+              <LinkBox redirect$={redirect$} path={PATH.SOFTWARE_DEVELOPMENT}>
+                <P>software development</P>
+              </LinkBox>
             </FadeIn>
           </Flex.Item>
           <Flex.Item>
             <FadeIn duration={1.5} delay={1}>
-              <LinkBox>knowledge</LinkBox>
+              <LinkBox>
+                <P>knowledge</P>
+                <P>(coming soon)</P>
+              </LinkBox>
             </FadeIn>
           </Flex.Item>
         </Flex.Root>
