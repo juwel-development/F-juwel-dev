@@ -31,16 +31,22 @@ const HomePage: FunctionComponent = () => {
         </Container>
       </FullScreenSection>
       <FullScreenSection heading="What are you looking for?">
-        <Flex.Root>
-          <FadeIn duration={2} delay={0.2}>
-            <LinkBox>software architecture</LinkBox>
-          </FadeIn>
-          <FadeIn duration={2} delay={0.8}>
-            <LinkBox>software development</LinkBox>
-          </FadeIn>
-          <FadeIn duration={2} delay={1.4}>
-            <LinkBox>knowledge</LinkBox>
-          </FadeIn>
+        <Flex.Root justify="between">
+          <Flex.Item>
+            <FadeIn duration={2} delay={0.2}>
+              <LinkBox>software architecture</LinkBox>
+            </FadeIn>
+          </Flex.Item>
+          <Flex.Item>
+            <FadeIn duration={2} delay={0.8}>
+              <LinkBox>software development</LinkBox>
+            </FadeIn>
+          </Flex.Item>
+          <Flex.Item>
+            <FadeIn duration={2} delay={1.4}>
+              <LinkBox>knowledge</LinkBox>
+            </FadeIn>
+          </Flex.Item>
         </Flex.Root>
       </FullScreenSection>
     </div>
