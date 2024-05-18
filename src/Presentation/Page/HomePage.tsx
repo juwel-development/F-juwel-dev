@@ -1,5 +1,5 @@
-import { Logger } from '@juwel-development/beautiful-logger';
 import { useAction } from '@juwel-development/react-observable-tools';
+import { ApplicationEventDispatcher } from 'Application/EventDispatcher/ApplicationEventDispatcher';
 import { FadeIn } from 'Presentation/Atom/Animation/FadeIn';
 import { Container } from 'Presentation/Atom/Layout/Container';
 import { Flex } from 'Presentation/Atom/Layout/Flex';
@@ -10,12 +10,15 @@ import { FullScreenSection } from 'Presentation/Molecule/FullScreenSection';
 import { LinkBox } from 'Presentation/Molecule/LinkBox';
 import { PATH } from 'Presentation/Routing/Path';
 import type { FunctionComponent } from 'react';
+import { container } from 'tsyringe';
 
 import bg from './bg.png';
 
 const HomePage: FunctionComponent = () => {
+  const applicationEventDispatcher = container.resolve(ApplicationEventDispatcher);
+
   const redirect$ = useAction((param: string) => {
-    Logger.getLogger('HomePage').info(`Redirecting to ${param}`);
+    void applicationEventDispatcher.redirectCommand(param);
   }, []);
 
   return (
