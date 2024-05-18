@@ -5,7 +5,7 @@ import { forwardRef } from 'react';
 
 export const H1 = forwardRef<HTMLHeadingElement, PropsWithChildren<VariantProps<typeof fontVariant>>>(
   ({ children, ...props }, ref) => (
-    <h1 ref={ref} {...props} className="text-body-1 text-lg md:text-5xl py-2 md:py-4">
+    <h1 ref={ref} {...props} className="text-body-1 text-xl md:text-6xl py-2 md:py-4">
       {children}
     </h1>
   ),

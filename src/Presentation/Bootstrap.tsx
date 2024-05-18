@@ -11,7 +11,7 @@ import { router } from './Routing/RouteDefinition';
 const AppComponent: FunctionComponent = () => {
   return (
     <StrictMode>
-      <Suspense>
+      <Suspense fallback="Loading">
         <AnimatedCursor innerSize={16} outerSize={8} color="100, 180, 255" />
         <RouterProvider router={router} />
       </Suspense>

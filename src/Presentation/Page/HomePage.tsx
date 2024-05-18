@@ -1,10 +1,10 @@
 import { FadeIn } from 'Presentation/Atom/Animation/FadeIn';
-import { Box } from 'Presentation/Atom/Layout/Box';
 import { Container } from 'Presentation/Atom/Layout/Container';
-import { Grid } from 'Presentation/Atom/Layout/Grid';
+import { Flex } from 'Presentation/Atom/Layout/Flex';
 import { Logo } from 'Presentation/Atom/Logo/Logo';
 import { H1 } from 'Presentation/Atom/Typography/H1';
 import { FullScreenSection } from 'Presentation/Molecule/FullScreenSection';
+import { LinkBox } from 'Presentation/Molecule/LinkBox';
 import type { FunctionComponent } from 'react';
 
 import bg from './bg.png';
@@ -30,21 +30,18 @@ const HomePage: FunctionComponent = () => {
           </FadeIn>
         </Container>
       </FullScreenSection>
-      <FullScreenSection>
-        <Container>
-          <H1>What are you looking for?</H1>
-          <Grid>
-            <FadeIn duration={2} delay={0.2}>
-              <Box>software architecture</Box>
-            </FadeIn>
-            <FadeIn duration={2} delay={0.8}>
-              <Box>software development</Box>
-            </FadeIn>
-            <FadeIn duration={2} delay={1.4}>
-              <Box>knowledge</Box>
-            </FadeIn>
-          </Grid>
-        </Container>
+      <FullScreenSection heading="What are you looking for?">
+        <Flex.Root>
+          <FadeIn duration={2} delay={0.2}>
+            <LinkBox>software architecture</LinkBox>
+          </FadeIn>
+          <FadeIn duration={2} delay={0.8}>
+            <LinkBox>software development</LinkBox>
+          </FadeIn>
+          <FadeIn duration={2} delay={1.4}>
+            <LinkBox>knowledge</LinkBox>
+          </FadeIn>
+        </Flex.Root>
       </FullScreenSection>
     </div>
   );

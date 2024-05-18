@@ -2,7 +2,7 @@ import type { VariantProps } from 'class-variance-authority';
 import { cva } from 'class-variance-authority';
 import type { FunctionComponent, PropsWithChildren } from 'react';
 
-const sectionRoot = cva('w-full py-1 md:py-2 lg:py-6', {
+const sectionRoot = cva('w-full py-1 md:py-4 lg:py-12', {
   variants: {
     size: {
       full: 'h-full',
@@ -16,7 +16,7 @@ const Root: FunctionComponent<PropsWithChildren<VariantProps<typeof sectionRoot>
 };
 
 const SectionContent: FunctionComponent<PropsWithChildren> = ({ children }) => {
-  return <div className="m-auto">{children}</div>;
+  return <div className="m-auto w-full h-full flex items-center">{children}</div>;
 };
 
 export const Section = {
