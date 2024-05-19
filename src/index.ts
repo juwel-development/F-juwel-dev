@@ -1,4 +1,5 @@
 import '@fontsource/lato';
+import '@fontsource/lato/700.css';
 import 'reflect-metadata';
 
 import { initializeApp } from 'firebase/app';

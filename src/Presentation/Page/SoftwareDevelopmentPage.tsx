@@ -4,7 +4,9 @@ import { Page } from 'Presentation/Atom/Layout/Page';
 import { Table } from 'Presentation/Atom/Table';
 import { ExternalLink } from 'Presentation/Atom/Typography/ExternalLink';
 import { H2 } from 'Presentation/Atom/Typography/H2';
+import { Italic } from 'Presentation/Atom/Typography/Italic';
 import { P } from 'Presentation/Atom/Typography/P';
+import { Strong } from 'Presentation/Atom/Typography/Strong';
 import { FullScreenSection } from 'Presentation/Molecule/FullScreenSection';
 import { useEffect } from 'react';
 import { container } from 'tsyringe';
@@ -44,8 +46,12 @@ const SoftwareDevelopmentPage = () => {
             <Table.Body>
               <Table.Row>
                 <Table.Cell>
-                  <P>nuwork</P>
-                  <P>09/2023 - now</P>
+                  <P>
+                    <Strong>nuwork</Strong>
+                  </P>
+                  <P>
+                    <Italic>09/2023 - now</Italic>
+                  </P>
                 </Table.Cell>
                 <Table.Cell>
                   <P>
@@ -58,8 +64,12 @@ const SoftwareDevelopmentPage = () => {
               </Table.Row>
               <Table.Row>
                 <Table.Cell>
-                  <P>spcfy</P>
-                  <P>08/2022 - 07/2023</P>
+                  <P>
+                    <Strong>spcfy</Strong>
+                  </P>
+                  <P>
+                    <Italic>08/2022 - 07/2023</Italic>
+                  </P>
                 </Table.Cell>
                 <Table.Cell>
                   <P>
@@ -78,8 +88,12 @@ const SoftwareDevelopmentPage = () => {
               </Table.Row>
               <Table.Row>
                 <Table.Cell>
-                  <P>Town & Country Haus</P>
-                  <P>12/2020 - 07/2022</P>
+                  <P>
+                    <Strong>Town & Country Haus</Strong>
+                  </P>
+                  <P>
+                    <Italic>12/2020 - 07/2022</Italic>
+                  </P>
                 </Table.Cell>
                 <Table.Cell>
                   <P>
@@ -94,12 +108,16 @@ const SoftwareDevelopmentPage = () => {
               </Table.Row>
               <Table.Row>
                 <Table.Cell>
-                  <P>HiCo Group (TRUECHART)</P>
-                  <P>04/2017 - 11/2020</P>
+                  <P>
+                    <Strong>HiCo Group</Strong> <ExternalLink href="https://www.truechart.com/">TRUECHART</ExternalLink>
+                  </P>
+                  <P>
+                    <Italic>04/2017 - 11/2020</Italic>
+                  </P>
                 </Table.Cell>
                 <Table.Cell>
                   <P>
-                    TrueChart is a chart solution, to visualize business reports based on the IBCS standard. We as a
+                    TRUECHART is a chart solution, to visualize business reports based on the IBCS standard. We as a
                     growing software team inherited a large code base, which we simplified by introducing React and
                     refactorings in the Java backend.
                   </P>
