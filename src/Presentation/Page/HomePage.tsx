@@ -47,23 +47,23 @@ const HomePage: FunctionComponent = () => {
           <Flex.Item>
             <FadeIn duration={1.5} delay={0.2}>
               <LinkBox>
-                <P>software architecture </P>
-                <P>(coming soon)</P>
+                <P align="center">software architecture </P>
+                <P align="center">(coming soon)</P>
               </LinkBox>
             </FadeIn>
           </Flex.Item>
           <Flex.Item>
             <FadeIn duration={1.5} delay={0.6}>
               <LinkBox redirect$={redirect$} path={PATH.SOFTWARE_DEVELOPMENT}>
-                <P>software development</P>
+                <P align="center">software development</P>
               </LinkBox>
             </FadeIn>
           </Flex.Item>
           <Flex.Item>
             <FadeIn duration={1.5} delay={1}>
               <LinkBox>
-                <P>knowledge</P>
-                <P>(coming soon)</P>
+                <P align="center">knowledge</P>
+                <P align="center">(coming soon)</P>
               </LinkBox>
             </FadeIn>
           </Flex.Item>
