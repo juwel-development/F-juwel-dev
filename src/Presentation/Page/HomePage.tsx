@@ -3,6 +3,7 @@ import { ApplicationEventDispatcher } from 'Application/EventDispatcher/Applicat
 import { FadeIn } from 'Presentation/Atom/Animation/FadeIn';
 import { Container } from 'Presentation/Atom/Layout/Container';
 import { Flex } from 'Presentation/Atom/Layout/Flex';
+import { Page } from 'Presentation/Atom/Layout/Page';
 import { Logo } from 'Presentation/Atom/Logo/Logo';
 import { H1 } from 'Presentation/Atom/Typography/H1';
 import { P } from 'Presentation/Atom/Typography/P';
@@ -10,9 +11,8 @@ import { FullScreenSection } from 'Presentation/Molecule/FullScreenSection';
 import { LinkBox } from 'Presentation/Molecule/LinkBox';
 import { PATH } from 'Presentation/Routing/Path';
 import type { FunctionComponent } from 'react';
+import { useEffect } from 'react';
 import { container } from 'tsyringe';
-
-import bg from './bg.png';
 
 const HomePage: FunctionComponent = () => {
   const applicationEventDispatcher = container.resolve(ApplicationEventDispatcher);
@@ -21,11 +21,12 @@ const HomePage: FunctionComponent = () => {
     void applicationEventDispatcher.redirectCommand(param);
   }, []);
 
+  useEffect(() => {
+    void applicationEventDispatcher.pageVisited('Home');
+  }, []);
+
   return (
-    <div
-      className="absolute top-0 bottom-0 right-0 left-0 bg-repeat -z-10 select-none overflow-auto"
-      style={{ backgroundImage: `url(${bg}` }}
-    >
+    <Page>
       <FullScreenSection>
         <Container>
           <FadeIn duration={1.5}>
@@ -68,7 +69,7 @@ const HomePage: FunctionComponent = () => {
           </Flex.Item>
         </Flex.Root>
       </FullScreenSection>
-    </div>
+    </Page>
   );
 };
 
