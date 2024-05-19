@@ -23,7 +23,9 @@ const SoftwareDevelopmentPage = () => {
     <Page>
       <FullScreenSection heading="Software Development">
         <Container>
-          <P>Hi, I am Jens and I craft software.</P>
+          <P size="2xl">
+            <Strong>Hi, I am Jens and I craft software.</Strong>
+          </P>
           <P>
             With several years of experience, I am able to build software, that is made for its user. I care about the
             users needs and your business goals. That&apos;s why I care about finding a scalable and maintainable
