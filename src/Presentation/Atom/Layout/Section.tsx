@@ -6,7 +6,7 @@ const sectionRoot = cva('w-full py-1 md:py-4 lg:py-12', {
   variants: {
     size: {
       full: 'h-full',
-      screen: 'h-screen flex content-center justify-center',
+      screen: 'min-h-screen flex content-center justify-center',
     },
   },
 });

@@ -1,4 +1,3 @@
-import { Logger } from '@juwel-development/beautiful-logger';
 import { useAction } from '@juwel-development/react-observable-tools';
 import { Box } from 'Presentation/Atom/Layout/Box';
 import { Flex } from 'Presentation/Atom/Layout/Flex';

@@ -1,12 +1,13 @@
 import { ApplicationEventDispatcher } from 'Application/EventDispatcher/ApplicationEventDispatcher';
 import { Container } from 'Presentation/Atom/Layout/Container';
+import { Flex } from 'Presentation/Atom/Layout/Flex';
 import { Page } from 'Presentation/Atom/Layout/Page';
 import { Table } from 'Presentation/Atom/Table';
 import { ExternalLink } from 'Presentation/Atom/Typography/ExternalLink';
-import { H2 } from 'Presentation/Atom/Typography/H2';
 import { Italic } from 'Presentation/Atom/Typography/Italic';
 import { P } from 'Presentation/Atom/Typography/P';
 import { Strong } from 'Presentation/Atom/Typography/Strong';
+import { ExternalLinkBox } from 'Presentation/Molecule/ExternalLinkBox';
 import { FullScreenSection } from 'Presentation/Molecule/FullScreenSection';
 import { useEffect } from 'react';
 import { container } from 'tsyringe';
@@ -130,6 +131,27 @@ const SoftwareDevelopmentPage = () => {
               </Table.Row>
             </Table.Body>
           </Table.Root>
+        </Container>
+      </FullScreenSection>
+      <FullScreenSection heading="Social Media - Find me on the internet">
+        <Container>
+          <Flex.Root justify="between">
+            <Flex.Item>
+              <ExternalLinkBox to="https://www.linkedin.com/in/jens-uwe-lössl">
+                <P align="center">LinkedIn</P>
+              </ExternalLinkBox>
+            </Flex.Item>
+            <Flex.Item>
+              <ExternalLinkBox to="https://github.com/juwel-dev">
+                <P align="center">Github</P>
+              </ExternalLinkBox>
+            </Flex.Item>
+            <Flex.Item>
+              <ExternalLinkBox to="https://www.npmjs.com/~juwel-dev">
+                <P align="center">npm</P>
+              </ExternalLinkBox>
+            </Flex.Item>
+          </Flex.Root>
         </Container>
       </FullScreenSection>
     </Page>
