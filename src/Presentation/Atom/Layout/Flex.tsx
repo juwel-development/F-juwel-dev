@@ -6,7 +6,7 @@ const flexRoot = cva('flex gap-6', {
   variants: {
     direction: {
       row: 'flex-row w-full',
-      column: 'flex-col h-full',
+      column: 'flex-col min-h-full',
     },
     wrap: {
       wrap: 'flex-wrap',
@@ -50,14 +50,25 @@ const flexItem = cva('', {
     grow: {
       true: 'grow',
     },
+    flex: {
+      true: 'flex',
+    },
+    items: {
+      start: 'items-start',
+      end: 'items-end',
+      center: 'items-center',
+      stretch: 'items-stretch',
+    },
   },
   defaultVariants: {
     grow: false,
+    flex: false,
+    items: 'start',
   },
 });
 
-const FlexItem: FunctionComponent<PropsWithChildren<VariantProps<typeof flexItem>>> = ({ children, grow }) => {
-  return <div className={flexItem({ grow })}>{children}</div>;
+const FlexItem: FunctionComponent<PropsWithChildren<VariantProps<typeof flexItem>>> = ({ children, grow, flex }) => {
+  return <div className={flexItem({ grow, flex })}>{children}</div>;
 };
 
 export const Flex = {

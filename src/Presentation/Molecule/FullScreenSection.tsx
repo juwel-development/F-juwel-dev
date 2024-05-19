@@ -19,7 +19,7 @@ export const FullScreenSection: FunctionComponent<PropsWithChildren<IProps>> = (
               <H1>{heading}</H1>
             </Flex.Item>
           )}
-          <Flex.Item grow>
+          <Flex.Item grow flex items="center">
             <Section.Content>{children}</Section.Content>
           </Flex.Item>
         </Flex.Root>
