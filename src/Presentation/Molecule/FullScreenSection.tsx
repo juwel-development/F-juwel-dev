@@ -6,7 +6,7 @@ import { Section } from 'Presentation/Atom/Layout/Section';
 import { H1 } from 'Presentation/Atom/Typography/H1';
 import type { FunctionComponent, PropsWithChildren } from 'react';
 import { useLayoutEffect, useRef } from 'react';
-import { filter, throttleTime } from 'rxjs';
+import { debounceTime, filter, throttleTime } from 'rxjs';
 import { container } from 'tsyringe';
 
 interface IProps {
@@ -19,17 +19,14 @@ export const FullScreenSection: FunctionComponent<PropsWithChildren<IProps>> = (
 
   useLayoutEffect(() => {
     const subscription = scrollTopic.ScrollPositionY$.pipe(
+      debounceTime(250),
       filter(({ y, direction }) => {
         if (!ref.current) return false;
 
         const element = ref.current;
 
         if (direction === 'down') {
-          return element.offsetTop - y < 0.8 * element.offsetHeight && element.offsetTop - y > 0;
-        }
-
-        if (direction === 'up') {
-          return element.offsetTop + element.offsetHeight * 0.8 > y && element.offsetTop < y;
+          return element.offsetTop - y < 0.6 * element.offsetHeight && element.offsetTop - y > 0;
         }
 
         return false;
