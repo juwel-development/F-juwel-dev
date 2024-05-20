@@ -22,7 +22,7 @@ rootRoute.addChildren([homeRoute, imprintRoute]);
 const softwareDevelopmentRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: PATH.SOFTWARE_DEVELOPMENT,
-  component: React.lazy(() => import('Presentation/Page/SoftwareDevelopmentPage')),
+  component: React.lazy(() => import('Presentation/Page/SoftwareDevelopment/SoftwareDevelopmentPage')),
 });
 
 homeRoute.addChildren([softwareDevelopmentRoute]);

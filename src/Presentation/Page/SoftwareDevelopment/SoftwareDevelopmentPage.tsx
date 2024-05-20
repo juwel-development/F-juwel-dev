@@ -14,6 +14,8 @@ import { FullScreenSection } from 'Presentation/Molecule/FullScreenSection';
 import { useEffect } from 'react';
 import { container } from 'tsyringe';
 
+import jensi from './Jensi.webp';
+
 const SoftwareDevelopmentPage = () => {
   const applicationEventDispatcher = container.resolve(ApplicationEventDispatcher);
 
@@ -23,27 +25,35 @@ const SoftwareDevelopmentPage = () => {
 
   return (
     <Page>
+      <FadeIn duration={2} delay={1}>
+        <div
+          className="absolute top-64 right-0 w-96 h-1/2 -z-10 hidden lg:block rounded-l-3xl bg-cover"
+          style={{ backgroundImage: `url(${jensi}` }}
+        />
+      </FadeIn>
       <FullScreenSection heading="Software Development">
         <Container>
           <FadeIn>
-            <P size="2xl">
-              <Strong>Hi, I am Jens and I craft software.</Strong>
-            </P>
-            <P>
-              With several years of experience, I am able to build software, that is made for its user. I care about the
-              users needs and your business goals. That&apos;s why I care about finding a scalable and maintainable
-              solution.
-            </P>
-            <P>
-              I am a fullstack developer, with a dedication to event based system. This can be reactive frontends or
-              backend systems, that are ready for the cloud. I love to communicate with stakeholders, to understand the
-              business and the software that you need for success.
-            </P>
-            <P>
-              Also I love to create concepts and architectures, that are ready for the future. I love to document my
-              approach based on industry standards and best practices. For example, I am a big fan of Confluence and the{' '}
-              <ExternalLink href="https://c4model.com/">C4 model.</ExternalLink>
-            </P>
+            <div className="lg:w-3/6 xl:w-4/6">
+              <P size="2xl">
+                <Strong>Hi, I am Jens and I craft software.</Strong>
+              </P>
+              <P>
+                With several years of experience, I am able to build software, that is made for its user. I care about
+                the users needs and your business goals. That&apos;s why I care about finding a scalable and
+                maintainable solution.
+              </P>
+              <P>
+                I am a fullstack developer, with a dedication to event based system. This can be reactive frontends or
+                backend systems, that are ready for the cloud. I love to communicate with stakeholders, to understand
+                the business and the software that you need for success.
+              </P>
+              <P>
+                Also I love to create concepts and architectures, that are ready for the future. I love to document my
+                approach based on industry standards and best practices. For example, I am a big fan of Confluence and
+                the <ExternalLink href="https://c4model.com/">C4 model.</ExternalLink>
+              </P>
+            </div>
           </FadeIn>
         </Container>
       </FullScreenSection>
