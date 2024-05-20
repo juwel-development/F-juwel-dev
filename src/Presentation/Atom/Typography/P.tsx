@@ -4,7 +4,7 @@ import { fontVariant } from 'Presentation/Atom/Typography/fontVariant';
 import type { PropsWithChildren } from 'react';
 import { forwardRef } from 'react';
 
-const style = cva('text-body-1 pb-3 pt-1 ', {
+const style = cva('text-body-1 pb-4 pt-1 ', {
   variants: { ...fontVariant, size: { ...fontVariant.size, base: 'text-base md:text-lg' } },
   defaultVariants: { size: 'base' },
 });
