@@ -1,5 +1,6 @@
 import { Logger } from '@juwel-development/beautiful-logger';
 import { ScrollTopic } from 'Application/Topic/ScrollTopic';
+import { FadeIn } from 'Presentation/Atom/Animation/FadeIn';
 import { Container } from 'Presentation/Atom/Layout/Container';
 import { Flex } from 'Presentation/Atom/Layout/Flex';
 import { Section } from 'Presentation/Atom/Layout/Section';
@@ -45,7 +46,9 @@ export const FullScreenSection: FunctionComponent<PropsWithChildren<IProps>> = (
         {heading && (
           <Flex.Item>
             <Container>
-              <H1>{heading}</H1>
+              <FadeIn>
+                <H1>{heading}</H1>
+              </FadeIn>
             </Container>
           </Flex.Item>
         )}

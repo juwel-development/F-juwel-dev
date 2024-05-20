@@ -1,5 +1,7 @@
 import { ApplicationEventDispatcher } from 'Application/EventDispatcher/ApplicationEventDispatcher';
 import bg from 'Presentation/Atom/Layout/bg.png';
+import { InternalLink } from 'Presentation/Atom/Typography/InternalLink';
+import { PATH } from 'Presentation/Routing/Path';
 import type { FunctionComponent, PropsWithChildren } from 'react';
 import { useLayoutEffect, useRef } from 'react';
 import { fromEvent } from 'rxjs';
@@ -24,6 +26,9 @@ export const Page: FunctionComponent<PropsWithChildren> = ({ children }) => {
       ref={ref}
     >
       {children}
+      <div className="sticky left-0 bottom-0 p-2">
+        <InternalLink to={PATH.IMPRINT}>Imprint</InternalLink>
+      </div>
     </div>
   );
 };

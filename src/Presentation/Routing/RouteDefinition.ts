@@ -11,7 +11,13 @@ const homeRoute = createRoute({
   component: React.lazy(() => import('Presentation/Page/HomePage')),
 });
 
-rootRoute.addChildren([homeRoute]);
+const imprintRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: PATH.IMPRINT,
+  component: React.lazy(() => import('Presentation/Page/ImprintPage')),
+});
+
+rootRoute.addChildren([homeRoute, imprintRoute]);
 
 const softwareDevelopmentRoute = createRoute({
   getParentRoute: () => rootRoute,
