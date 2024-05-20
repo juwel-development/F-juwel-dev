@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@fontsource/lato": "^5.0.21",
-    "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.17",
     "@juwel-development/beautiful-logger": "^1.0.0",
     "@juwel-development/react-observable-tools": "^2.0.0",
@@ -21,7 +20,6 @@
     "class-variance-authority": "^0.7.0",
     "firebase": "^10.0.0",
     "framer-motion": "^11.1.7",
-    "lodash": "^4.17.19",
     "react": "^18.0.0",
     "react-animated-cursor": "^2.11.2",
     "react-dom": "^18.0.0",
@@ -30,14 +28,11 @@
     "reflect-metadata": "^0.2.1",
     "rxjs": "^7.3.0",
     "tailwindcss": "^3.1.8",
-    "tsyringe": "^4.8.0",
-    "uuid": "^9.0.0"
+    "tsyringe": "^4.8.0"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.157",
     "@types/react": "^18.0.6",
     "@types/react-dom": "^18.0.3",
-    "@types/uuid": "^9.0.1",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
     "circular-dependency-plugin": "^5.2.0",

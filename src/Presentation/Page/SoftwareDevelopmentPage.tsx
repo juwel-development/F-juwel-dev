@@ -4,6 +4,7 @@ import { Container } from 'Presentation/Atom/Layout/Container';
 import { Flex } from 'Presentation/Atom/Layout/Flex';
 import { Page } from 'Presentation/Atom/Layout/Page';
 import { Table } from 'Presentation/Atom/Table';
+import { Tag } from 'Presentation/Atom/Tag';
 import { ExternalLink } from 'Presentation/Atom/Typography/ExternalLink';
 import { Italic } from 'Presentation/Atom/Typography/Italic';
 import { P } from 'Presentation/Atom/Typography/P';
@@ -61,12 +62,27 @@ const SoftwareDevelopmentPage = () => {
                     </P>
                   </Table.Cell>
                   <Table.Cell>
+                    <P>nuwork is dedicated to combine freedom and commitment for a people-centered work environment.</P>
                     <P>
-                      [StartUp] With nuwork, we create the work culture of tomorrow. Reaching a goal is a tough and
-                      winding road sometimes. That why our software will motivate people to contribute to company and
-                      team goals.
+                      Besides the development of the platform, I am responsible for the technical concept of a new
+                      product called &quot;nutopia&quot; - a digital mountain landscape, where you can meet your
+                      colleagues and motivate to reach your goals.
                     </P>
-                    <P>We combine freedom and commitment in a people-centered work environment.</P>
+                    <P>We were able to design a solution based on React and Lottie Files for interactive animations.</P>
+                    <P>
+                      Also, we started to establish evidence based product development based on the book
+                      &quot;Evidence-Guided: Creating High Impact Products in the Face of Uncertainty&quot; by Itamar
+                      Gilad.
+                    </P>
+                    <P>
+                      <Tag>StartUp</Tag>
+                      <Tag>React</Tag>
+                      <Tag>NodeJs</Tag>
+                      <Tag>NestJs</Tag>
+                      <Tag>PostgreSQL</Tag>
+                      <Tag>Clean Architecture</Tag>
+                      <Tag>AWS</Tag>
+                    </P>
                   </Table.Cell>
                 </Table.Row>
                 <Table.Row>
@@ -80,16 +96,26 @@ const SoftwareDevelopmentPage = () => {
                   </Table.Cell>
                   <Table.Cell>
                     <P>
-                      [StartUp] Have you ever wondered which biological footprint your food has? spcfy is a solution
-                      that will give you answers. Based on DNA found in a soil sample, spcfy can determine species and
-                      biodiversity. This makes the impact of agriculture on the ecosystem measurable.
+                      Have you ever wondered which biological footprint your food has? By collecting soil samples and
+                      DNA sequencing, you are able to get a detailed insight into the nature-impact of your food.
                     </P>
                     <P>
-                      This startup was in an early stage - so with a very tight budget - we as a 2 men IT team had to
-                      fulfill all the responsibilities of a whole IT department. This includes DevOps, Frontend and
-                      Backend Development, but also requirements engineering and being involved in product development.
-                      After 1 year of development, we were able to hand over a scalable cloud solution, that runs a
-                      bioinformatic pipeline via AWS Lambda, AWS Step Functions, and AWS Batch.
+                      Within one year we were able to develop a MVP, that is able to run the required bioinformatics
+                      pipelines in the cloud.
+                    </P>
+                    <P>
+                      We were a team of two developers and were responsible for the whole software development process.
+                      We gathered requirements by stakeholders, designed the architecture, implemented the software and
+                      deployed it to the cloud.
+                    </P>
+                    <P>
+                      <Tag>StartUp</Tag>
+                      <Tag>React</Tag>
+                      <Tag>.Net Core</Tag>
+                      <Tag>PostgreSQL</Tag>
+                      <Tag>AWS</Tag>
+                      <Tag>Clean Architecture</Tag>
+                      <Tag>Domain Driven Design</Tag>
                     </P>
                   </Table.Cell>
                 </Table.Row>
@@ -108,10 +134,23 @@ const SoftwareDevelopmentPage = () => {
                       approach.
                     </P>
                     <P>
-                      Due to the high traffic and long-running calculations, I was confronted for the first time with
-                      designing a highly scalable solution together with a software architect. We decided to develop an
-                      event-based system that would eventually allow homebuyers and planners to design their dream
-                      homes.
+                      Due to the high traffic and long-running calculations, I was confronted with designing a highly
+                      scalable solution together with a software architect. We decided to develop an event-based system
+                      that would eventually allow homebuyers and planners to design their dream homes.
+                    </P>
+                    <P>
+                      I was responsible for the CI/CD process to publish our internal nuget packages and Docker images
+                      to JFrog Artifactory.
+                    </P>
+                    <P>
+                      <Tag>React</Tag>
+                      <Tag>CQRS</Tag>
+                      <Tag>.Net Core</Tag>
+                      <Tag>Apache Kafka</Tag>
+                      <Tag>Revit</Tag>
+                      <Tag>Clean Architecture</Tag>
+                      <Tag>Domain Driven Design</Tag>
+                      <Tag>Protobufs</Tag>
                     </P>
                   </Table.Cell>
                 </Table.Row>
@@ -119,7 +158,6 @@ const SoftwareDevelopmentPage = () => {
                   <Table.Cell>
                     <P>
                       <Strong>HiCo Group</Strong>{' '}
-                      <ExternalLink href="https://www.truechart.com/">TRUECHART</ExternalLink>
                     </P>
                     <P>
                       <Italic>04/2017 - 11/2020</Italic>
@@ -127,14 +165,23 @@ const SoftwareDevelopmentPage = () => {
                   </Table.Cell>
                   <Table.Cell>
                     <P>
-                      TRUECHART is a chart solution, to visualize business reports based on the IBCS standard. We as a
-                      growing software team inherited a large code base, which we simplified by introducing React and
-                      refactorings in the Java backend.
+                      <ExternalLink href="https://www.truechart.com/">TRUECHART</ExternalLink> is a chart solution, to
+                      visualize business reports based on the IBCS standard.
                     </P>
                     <P>
-                      During this time I fell in love with Java as a backend language, which was a huge part of our
-                      commenting solution. By also providing the commenting API via Sockets we were able to build the
-                      foundation of the product KPICHAT.
+                      We started to refactor our frontend to React. Also I worked in the backend, with the goal to
+                      simplify the code. At the end I had the responsibility for porting TRUECHART4QlikView to our newly
+                      created core chart-platform.
+                    </P>
+                    <P>
+                      <Tag>React</Tag>
+                      <Tag>Java</Tag>
+                      <Tag>Hibernate</Tag>
+                      <Tag>Ivy</Tag>
+                      <Tag>SVG</Tag>
+                      <Tag>TypeScript</Tag>
+                      <Tag>MSSQL</Tag>
+                      <Tag>MySQL</Tag>
                     </P>
                   </Table.Cell>
                 </Table.Row>
