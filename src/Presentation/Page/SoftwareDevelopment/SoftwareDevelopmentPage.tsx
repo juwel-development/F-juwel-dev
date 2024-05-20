@@ -27,7 +27,7 @@ const SoftwareDevelopmentPage = () => {
     <Page>
       <FadeIn duration={2} delay={1}>
         <div
-          className="absolute top-64 right-0 w-96 h-1/2 -z-10 hidden lg:block rounded-l-3xl bg-cover"
+          className="absolute top-64 right-0 w-96 h-1/2 -z-10 hidden lg:block rounded-l-3xl bg-cover shadow-2xl"
           style={{ backgroundImage: `url(${jensi}` }}
         />
       </FadeIn>

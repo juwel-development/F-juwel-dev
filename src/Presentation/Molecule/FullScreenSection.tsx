@@ -27,7 +27,7 @@ export const FullScreenSection: FunctionComponent<PropsWithChildren<IProps>> = (
         const element = ref.current;
 
         if (direction === 'down') {
-          return element.offsetTop - y < 0.6 * element.offsetHeight && element.offsetTop - y > 0;
+          return element.offsetTop - y < 0.6 * window.innerHeight && element.offsetTop - y > 0;
         }
 
         return false;
