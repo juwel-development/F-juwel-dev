@@ -41,19 +41,18 @@ export const FullScreenSection: FunctionComponent<PropsWithChildren<IProps>> = (
 
   return (
     <Section.Root size="screen" ref={ref}>
-      <Container>
-        <Flex.Root direction="column">
-          {heading && (
-            <Flex.Item>
-              {' '}
+      <Flex.Root direction="column" width="full">
+        {heading && (
+          <Flex.Item>
+            <Container>
               <H1>{heading}</H1>
-            </Flex.Item>
-          )}
-          <Flex.Item grow flex items="center">
-            <Section.Content>{children}</Section.Content>
+            </Container>
           </Flex.Item>
-        </Flex.Root>
-      </Container>
+        )}
+        <Flex.Item grow flex items="center" width="full">
+          <Section.Content>{children}</Section.Content>
+        </Flex.Item>
+      </Flex.Root>
     </Section.Root>
   );
 };

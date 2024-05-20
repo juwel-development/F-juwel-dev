@@ -2,7 +2,7 @@ import type { VariantProps } from 'class-variance-authority';
 import { cva } from 'class-variance-authority';
 import type { FunctionComponent, PropsWithChildren } from 'react';
 
-const flexRoot = cva('flex gap-6', {
+const flexRoot = cva('flex gap-6 max-w-full', {
   variants: {
     direction: {
       row: 'flex-row w-full',
@@ -27,6 +27,9 @@ const flexRoot = cva('flex gap-6', {
       between: 'justify-between',
       around: 'justify-around',
     },
+    width: {
+      full: 'w-full',
+    },
   },
   defaultVariants: {
     direction: 'row',
@@ -41,11 +44,12 @@ const FlexRoot: FunctionComponent<PropsWithChildren<VariantProps<typeof flexRoot
   wrap,
   justify,
   items,
+  width,
 }) => {
-  return <div className={flexRoot({ direction, wrap, justify, items })}>{children}</div>;
+  return <div className={flexRoot({ direction, wrap, justify, items, width })}>{children}</div>;
 };
 
-const flexItem = cva('', {
+const flexItem = cva('max-w-full', {
   variants: {
     grow: {
       true: 'grow',
@@ -59,6 +63,9 @@ const flexItem = cva('', {
       center: 'items-center',
       stretch: 'items-stretch',
     },
+    width: {
+      full: 'w-full',
+    },
   },
   defaultVariants: {
     grow: false,
@@ -67,8 +74,13 @@ const flexItem = cva('', {
   },
 });
 
-const FlexItem: FunctionComponent<PropsWithChildren<VariantProps<typeof flexItem>>> = ({ children, grow, flex }) => {
-  return <div className={flexItem({ grow, flex })}>{children}</div>;
+const FlexItem: FunctionComponent<PropsWithChildren<VariantProps<typeof flexItem>>> = ({
+  children,
+  grow,
+  flex,
+  width,
+}) => {
+  return <div className={flexItem({ grow, flex, width })}>{children}</div>;
 };
 
 export const Flex = {

@@ -43,31 +43,33 @@ const HomePage: FunctionComponent = () => {
         </Container>
       </FullScreenSection>
       <FullScreenSection heading="What are you looking for?">
-        <Flex.Root justify="between">
-          <Flex.Item>
-            <FadeIn duration={1.5} delay={0.2}>
-              <LinkBox>
-                <P align="center">software architecture </P>
-                <P align="center">(coming soon)</P>
-              </LinkBox>
-            </FadeIn>
-          </Flex.Item>
-          <Flex.Item>
-            <FadeIn duration={1.5} delay={0.6}>
-              <LinkBox redirect$={redirect$} path={PATH.SOFTWARE_DEVELOPMENT}>
-                <P align="center">software development</P>
-              </LinkBox>
-            </FadeIn>
-          </Flex.Item>
-          <Flex.Item>
-            <FadeIn duration={1.5} delay={1}>
-              <LinkBox>
-                <P align="center">knowledge</P>
-                <P align="center">(coming soon)</P>
-              </LinkBox>
-            </FadeIn>
-          </Flex.Item>
-        </Flex.Root>
+        <Container>
+          <Flex.Root justify="between">
+            <Flex.Item>
+              <FadeIn duration={1.5} delay={0.2}>
+                <LinkBox>
+                  <P align="center">software architecture </P>
+                  <P align="center">(coming soon)</P>
+                </LinkBox>
+              </FadeIn>
+            </Flex.Item>
+            <Flex.Item>
+              <FadeIn duration={1.5} delay={0.6}>
+                <LinkBox redirect$={redirect$} path={PATH.SOFTWARE_DEVELOPMENT}>
+                  <P align="center">software development</P>
+                </LinkBox>
+              </FadeIn>
+            </Flex.Item>
+            <Flex.Item>
+              <FadeIn duration={1.5} delay={1}>
+                <LinkBox>
+                  <P align="center">knowledge</P>
+                  <P align="center">(coming soon)</P>
+                </LinkBox>
+              </FadeIn>
+            </Flex.Item>
+          </Flex.Root>
+        </Container>
       </FullScreenSection>
     </Page>
   );

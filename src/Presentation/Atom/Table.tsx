@@ -2,7 +2,7 @@ import type { FunctionComponent, PropsWithChildren } from 'react';
 
 const TableRoot: FunctionComponent<PropsWithChildren> = ({ children }) => {
   return (
-    <div className="overflow-x-auto min-w-full">
+    <div className="overflow-x-auto max-w-full">
       <table className="table-auto border-collapse">{children}</table>
     </div>
   );

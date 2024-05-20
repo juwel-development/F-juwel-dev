@@ -21,7 +21,7 @@ const Root = forwardRef<HTMLElement, PropsWithChildren<VariantProps<typeof secti
 });
 
 const SectionContent: FunctionComponent<PropsWithChildren> = ({ children }) => {
-  return <div className="m-auto w-full h-full flex items-center">{children}</div>;
+  return <div className="m-auto w-full min-h-full max-w-full flex items-center">{children}</div>;
 };
 
 export const Section = {
