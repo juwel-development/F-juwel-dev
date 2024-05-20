@@ -36,7 +36,12 @@ const SoftwareDevelopmentPage = () => {
           <FadeIn>
             <div className="lg:w-3/6 xl:w-4/6">
               <P size="2xl">
-                <Strong>Hi, I am Jens and I craft software.</Strong>
+                <Strong>
+                  Hi, I am Jens and I craft software
+                  <FadeIn delay={3} duration={0.4}>
+                    .
+                  </FadeIn>
+                </Strong>
               </P>
               <P>
                 With several years of experience, I am able to build software, that is made for its user. I care about
