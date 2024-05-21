@@ -1,8 +1,9 @@
 import type { FunctionComponent, PropsWithChildren } from 'react';
-import { Container } from '../../components/Atom/Layout/Container.tsx';
-import { Flex } from '../../components/Atom/Layout/Flex.tsx';
-import { Section } from '../../components/Atom/Layout/Section.tsx';
-import { H1 } from '../../components/Atom/Typography/H1.tsx';
+import { Container } from '../Atom/Layout/Container.tsx';
+import { Section } from '../Atom/Layout/Section.tsx';
+import { Flex } from '../Atom/Layout/Flex';
+import { H1 } from '../Atom/Typography/H1.tsx';
+
 
 interface IProps {
   heading?: string;

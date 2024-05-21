@@ -1,28 +1,24 @@
 ---
-import '../../components/Style/GlobalStyle.astro';
+import '../../components/astro/GlobalStyle.astro';
+import Header from '../../components/astro/Header.astro';
 
-import { Flex } from '../../components/Atom/Layout/Flex';
-import { ExternalLinkBox } from '../../components/Molecule/ExternalLinkBox';
-import { Table } from '../../components/Atom/Table';
-import { Tag } from '../../components/Atom/Tag';
+import { Flex } from '../../components/js/Atom/Layout/Flex';
+import { ExternalLinkBox } from '../../components/js/Molecule/ExternalLinkBox';
+import { Table } from '../../components/js/Atom/Table';
+import { Tag } from '../../components/js/Atom/Tag';
 
-import { Italic } from '../../components/Atom/Typography/Italic';
-import { Container } from '../../components/Atom/Layout/Container';
-import { ExternalLink } from '../../components/Atom/Typography/ExternalLink';
-import { P } from '../../components/Atom/Typography/P';
-import { Strong } from '../../components/Atom/Typography/Strong';
+import { Italic } from '../../components/js/Atom/Typography/Italic';
+import { Container } from '../../components/js/Atom/Layout/Container';
+import { ExternalLink } from '../../components/js/Atom/Typography/ExternalLink';
+import { P } from '../../components/js/Atom/Typography/P';
+import { Strong } from '../../components/js/Atom/Typography/Strong';
 
-import { Page } from '../../components/Atom/Layout/Page';
-import { FullScreenSection } from '../../components/Molecule/FullScreenSection';
+import { Page } from '../../components/js/Atom/Layout/Page';
+import { FullScreenSection } from '../../components/js/Molecule/FullScreenSection';
 ---
 
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
-  <meta name="viewport" content="width=device-width" />
-  <title>JUWEL Development</title>
-</head>
+<Header title="Software development"/>
 <body>
 <Page>
   <div

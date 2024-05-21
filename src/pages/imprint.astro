@@ -1,22 +1,18 @@
 ---
 
-import "../components/Style/GlobalStyle.astro"
+import "../components/astro/GlobalStyle.astro"
+import Header from '../components/astro/Header.astro';
 
-import { Page } from '../components/Atom/Layout/Page';
-import { Container } from '../components/Atom/Layout/Container';
-import { P } from '../components/Atom/Typography/P';
-import { H2 } from '../components/Atom/Typography/H2';
-import { FullScreenSection } from '../components/Molecule/FullScreenSection';
+import { Page } from '../components/js/Atom/Layout/Page';
+import { Container } from '../components/js/Atom/Layout/Container';
+import { P } from '../components/js/Atom/Typography/P';
+import { H2 } from '../components/js/Atom/Typography/H2';
+import { FullScreenSection } from '../components/js/Molecule/FullScreenSection';
 
 ---
 
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
-  <meta name="viewport" content="width=device-width" />
-  <title>JUWEL Development</title>
-</head>
+<Header title="Imprint">
 <body>
 <Page>
   <FullScreenSection heading="Imprint">

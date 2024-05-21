@@ -1,10 +1,12 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
-
 import tailwind from '@astrojs/tailwind';
+
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), tailwind()],
-  prefetch: true
+  integrations: [react(), tailwind(), sitemap()],
+  prefetch: true,
+  site: 'https://juwel.dev',
 });
