@@ -1,0 +1,57 @@
+---
+import '../components/Style/GlobalStyle.astro';
+
+import { Page } from '../components/Atom/Layout/Page';
+import { FullScreenSection } from '../components/Molecule/FullScreenSection';
+import { H1 } from '../components/Atom/Typography/H1';
+import { P } from '../components/Atom/Typography/P';
+import { Logo } from '../components/Atom/Logo/Logo';
+import { Container } from '../components/Atom/Layout/Container';
+import { Flex } from '../components/Atom/Layout/Flex';
+import { LinkBox } from '../components/Molecule/LinkBox';
+---
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+  <meta name="viewport" content="width=device-width" />
+  <title>JUWEL Development</title>
+</head>
+<body>
+<Page>
+  <FullScreenSection heading="">
+    <Container>
+      <Logo />
+      <H1 align="center">
+        I craft software.
+      </H1>
+    </Container>
+  </FullScreenSection>
+
+  <FullScreenSection heading="What are you looking for?">
+    <Container>
+      <Flex.Root justify="between">
+        <Flex.Item>
+          <LinkBox>
+            <P align="center">software architecture </P>
+            <P align="center">(coming soon)</P>
+          </LinkBox>
+        </Flex.Item>
+        <Flex.Item>
+            <LinkBox to="/software-development">
+              <P align="center">software development</P>
+            </LinkBox>
+        </Flex.Item>
+        <Flex.Item>
+          <LinkBox>
+            <P align="center">knowledge</P>
+            <P align="center">(coming soon)</P>
+          </LinkBox>
+        </Flex.Item>
+      </Flex.Root>
+    </Container>
+  </FullScreenSection>
+</Page>
+</body>
+</html>
