@@ -4,11 +4,11 @@ import Header from '../components/astro/Header.astro';
 
 import { Page } from '../components/js/Atom/Layout/Page';
 
-const { title = "Welcome"} = Astro.props;
+const { title = "Welcome", description = ""} = Astro.props;
 ---
 
 <html lang="en">
-<Header title={title}/>
+<Header title={title} description={description}/>
 <body>
 <Page>
     <slot/>

@@ -1,12 +1,21 @@
 ---
-import { ViewTransitions} from 'astro:transitions';
+import { ViewTransitions } from 'astro:transitions';
 ---
 
 <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8"/>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
+    <link rel="sitemap" href="/sitemap-index.xml"/>
+    <meta name="viewport" content="width=device-width"/>
     <title>{Astro.props.title} | JUWEL Development</title>
+    <meta name="description" content={Astro.props.description}>
+    <meta name="keywords" content="software development, portfolio, blog, coding, tech knowledge, software projects, programming, software architecture">
+    <meta name="author" content="Juwel Dev">
+    <meta name="robots" content="index, follow"/>
+    <meta name="og:title" content=`${Astro.props.title} | JUWEL Development`/>
+    <meta name="og:description" content={Astro.props.description}/>
+    <meta name="og:image" content="/img/logo.svg"/>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://juwel.dev"/>
     <ViewTransitions/>
 </head>

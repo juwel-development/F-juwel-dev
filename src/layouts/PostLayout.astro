@@ -5,11 +5,11 @@ import {Article} from '../components/js/Atom/Layout/Article';
 import { H1 } from '../components/js/Atom/Typography';
 import { Container } from '../components/js/Atom/Layout/Container';
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 
 ---
 
-<BaseLayout title={title}>
+<BaseLayout title={title} description={description}>
     <Container>
         <Article>
             <H1>{title}</H1>
