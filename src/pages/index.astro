@@ -1,21 +1,17 @@
 ---
-import '../components/astro/GlobalStyle.astro';
-import Header from '../components/astro/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-import { Page } from '../components/js/Atom/Layout/Page';
 import { FullScreenSection } from '../components/js/Molecule/FullScreenSection';
-import { H1 } from '../components/js/Atom/Typography/H1';
-import { P } from '../components/js/Atom/Typography/P';
+import { H1 } from '../components/js/Atom/Typography';
+import { P } from '../components/js/Atom/Typography';
 import { Logo } from '../components/js/Atom/Logo/Logo';
 import { Container } from '../components/js/Atom/Layout/Container';
 import { Flex } from '../components/js/Atom/Layout/Flex';
 import { LinkBox } from '../components/js/Molecule/LinkBox';
+
 ---
 
-<html lang="en">
-<Header title=""/>
-<body>
-<Page>
+<BaseLayout>
   <FullScreenSection heading="">
     <Container>
       <Logo />
@@ -29,15 +25,14 @@ import { LinkBox } from '../components/js/Molecule/LinkBox';
     <Container>
       <Flex.Root justify="between">
         <Flex.Item>
-          <LinkBox>
-            <P align="center">software architecture </P>
-            <P align="center">(coming soon)</P>
+          <LinkBox to="/software-development">
+            <P align="center">software development</P>
           </LinkBox>
         </Flex.Item>
         <Flex.Item>
-            <LinkBox to="/software-development">
-              <P align="center">software development</P>
-            </LinkBox>
+          <LinkBox to="/software-architecture">
+            <P align="center">software architecture </P>
+          </LinkBox>
         </Flex.Item>
         <Flex.Item>
           <LinkBox>
@@ -48,6 +43,4 @@ import { LinkBox } from '../components/js/Molecule/LinkBox';
       </Flex.Root>
     </Container>
   </FullScreenSection>
-</Page>
-</body>
-</html>
+</BaseLayout>

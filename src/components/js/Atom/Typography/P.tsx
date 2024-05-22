@@ -4,7 +4,7 @@ import { fontVariant } from './fontVariant';
 import type { PropsWithChildren } from 'react';
 import { forwardRef } from 'react';
 
-const style = cva('pb-4 pt-1 ', {
+const style = cva('pb-4 pt-1 leading-relaxed', {
   variants: { ...fontVariant, size: { ...fontVariant.size, base: 'text-base md:text-lg' } },
   defaultVariants: { size: 'base' , color: 'contrast'},
 });

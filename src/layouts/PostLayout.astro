@@ -1,0 +1,19 @@
+---
+
+import BaseLayout from './BaseLayout.astro';
+import {Article} from '../components/js/Atom/Layout/Article';
+import { H1 } from '../components/js/Atom/Typography';
+import { Container } from '../components/js/Atom/Layout/Container';
+
+const { title } = Astro.props;
+
+---
+
+<BaseLayout title={title}>
+    <Container>
+        <Article>
+            <H1>{title}</H1>
+            <slot />
+        </Article>
+    </Container>
+</BaseLayout>

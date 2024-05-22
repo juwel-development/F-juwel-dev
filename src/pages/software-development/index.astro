@@ -1,6 +1,4 @@
 ---
-import '../../components/astro/GlobalStyle.astro';
-import Header from '../../components/astro/Header.astro';
 
 import { Flex } from '../../components/js/Atom/Layout/Flex';
 import { ExternalLinkBox } from '../../components/js/Molecule/ExternalLinkBox';
@@ -13,17 +11,14 @@ import { ExternalLink } from '../../components/js/Atom/Typography/ExternalLink';
 import { P } from '../../components/js/Atom/Typography/P';
 import { Strong } from '../../components/js/Atom/Typography/Strong';
 
-import { Page } from '../../components/js/Atom/Layout/Page';
 import { FullScreenSection } from '../../components/js/Molecule/FullScreenSection';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<html lang="en">
-<Header title="Software development"/>
-<body>
-<Page>
+<BaseLayout title="Software Development">
   <div
-    class="absolute top-64 right-0 w-96 h-1/2 -z-10 hidden lg:block rounded-l-3xl bg-cover shadow-2xl"
-    style={{ backgroundImage: 'url(/img/jensi.webp)' }}
+      class="absolute top-64 right-0 w-96 h-1/2 -z-10 hidden lg:block rounded-l-3xl bg-cover shadow-2xl"
+      style={{ backgroundImage: 'url(/img/jensi.webp)' }}
   />
   <FullScreenSection heading="Software Development">
     <Container>
@@ -213,6 +208,4 @@ import { FullScreenSection } from '../../components/js/Molecule/FullScreenSectio
       </Flex.Root>
     </Container>
   </FullScreenSection>
-</Page>
-</body>
-</html>
+</BaseLayout>

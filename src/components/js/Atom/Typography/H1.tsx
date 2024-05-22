@@ -4,7 +4,7 @@ import type { PropsWithChildren } from 'react';
 import { forwardRef } from 'react';
 import { fontVariant } from './fontVariant';
 
-const style = cva('text-body-1 text-3xl md:text-6xl py-2 md:py-4', {
+const style = cva('text-body-1 text-3xl md:text-6xl py-3 md:py-6', {
   variants: fontVariant
 });
 

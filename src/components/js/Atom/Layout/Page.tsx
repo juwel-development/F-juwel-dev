@@ -15,15 +15,15 @@ export const Page: FunctionComponent<PropsWithChildren> = ({ children }) => {
 
   return (
     <>
-      <div
-        className="absolute top-0 bottom-0 right-0 left-0 bg-repeat -z-10 select-none overflow-auto px-3 md:px-6"
+      <main
+        className="absolute top-0 bottom-0 right-0 left-0 bg-repeat -z-10 select-none overflow-auto px-4 md:px-12"
         style={{ backgroundImage: `url(/img/page/bg.png)` }}
       >
         {children}
-      </div>
-      <div className="absolute bottom-0 left-0 m-2">
+      </main>
+      <footer className="absolute bottom-0 left-0 m-2">
         <InternalLink to="/imprint">Imprint</InternalLink>
-      </div>
+      </footer>
     </>
   );
 };

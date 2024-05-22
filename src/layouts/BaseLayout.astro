@@ -1,0 +1,17 @@
+---
+import '../components/astro/GlobalStyle.astro';
+import Header from '../components/astro/Header.astro';
+
+import { Page } from '../components/js/Atom/Layout/Page';
+
+const { title = "Welcome"} = Astro.props;
+---
+
+<html lang="en">
+<Header title={title}/>
+<body>
+<Page>
+    <slot/>
+</Page>
+</body>
+</html>

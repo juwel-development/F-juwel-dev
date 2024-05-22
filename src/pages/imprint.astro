@@ -1,9 +1,7 @@
 ---
 
-import "../components/astro/GlobalStyle.astro"
-import Header from '../components/astro/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-import { Page } from '../components/js/Atom/Layout/Page';
 import { Container } from '../components/js/Atom/Layout/Container';
 import { P } from '../components/js/Atom/Typography/P';
 import { H2 } from '../components/js/Atom/Typography/H2';
@@ -11,10 +9,7 @@ import { FullScreenSection } from '../components/js/Molecule/FullScreenSection';
 
 ---
 
-<html lang="en">
-<Header title="Imprint" />
-<body>
-<Page>
+<BaseLayout title="Imprint" >
   <FullScreenSection heading="Imprint">
     <Container>
       <P>
@@ -54,6 +49,4 @@ import { FullScreenSection } from '../components/js/Molecule/FullScreenSection';
       </P>
     </Container>
   </FullScreenSection>
-</Page>
-</body>
-</html>
+</BaseLayout>

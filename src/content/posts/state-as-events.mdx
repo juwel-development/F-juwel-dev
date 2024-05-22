@@ -1,0 +1,106 @@
+---
+
+title: Rethink state💡 Why you should model around events
+publishedAt: 2024-05-23
+tags:
+  - frontend
+  - state management
+---
+
+import { ExternalLink, H2, H3, Italic, P } from '../../components/js/Atom/Typography/index.ts'
+
+<H2>The data-driven world we live in...</H2>
+<P>'Data is money', I am sure you already heard about this term. It's true, data is the most valuable asset in the world today. Companies
+  like Google, Facebook, Amazon, and many others were building their business model around data.</P>
+<P>And data is what we need to handle in our applications: We have to display something to our users, we have to process data and
+  we have to push data to a backend server, or other systems.</P>
+
+<H2>The CRUD-ish way</H2>
+<P>A lot of web application are built 'CRUD' -alike: You load a resource from the backend, the user is updating some properties, and you
+  send the updated resource back to the backend. Thinking this way, results in an UI that is made for those operations. The result is an
+  application that provides a lot of list views, create, update, and delete possibilities on resources. Assuming you are building a blog,
+  in the 'crud-ish' way you think about creating a post, updating it and deleting it.</P>
+
+<P>The problem is: We as human do not think about 'updating' some data. We are using you web apps <Italic>for accomplish a task -
+  quickly.</Italic> So wouldn't it be natural, that we model our application around those tasks? Displaying a list of unreleased posts with
+  a release button. This could be a solution for quickly releasing posts from draft.</P>
+
+<H2>Modeling around events</H2>
+<H3>Let's start with just commands</H3>
+
+<P>To make it easier to follow, we should reduce complexity and do a little trick: Let's do not think about what we show and only think
+  about the interactions of a user. Lets call them `commands`. Everything that has to do with UI is only allowed to emit/dispatch these
+  commands. An example for emitting an event to a global <ExternalLink href={"https://rxjs.dev/guide/subject"}>subject from
+    rxjs.</ExternalLink></P>
+
+```tsx
+import { Subject } from 'rxjs';
+
+const GlobalEvent$ = new Subject();
+
+class ReleasePostEvent {
+  public readonly type = 'POST_RELEASE_COMMAND';
+  public readonly payload = new ReleasePostPayload();
+}
+
+class ReleasePostPayload {
+  public postId: string;
+}
+
+const UiComponent = ({ postId }) => {
+
+  const handleReleasePost = (postId: string) => {
+      const event = new ReleasePostEvent();
+      event.payload.postId = postId;
+
+      GlobalEvent$.next(event);
+  };
+
+  return <button onClick={()=>handleReleasePost('123')}>Release</button>;
+};
+```
+
+<H3>Now, what to do with these events?</H3>
+<P>This is where the magic happens: You can do whatever you want. Really 🚀🚀🚀</P>
+<P>You will run into a situations, that you have multiple event listeners registered. Some ideas: You can use these events to update
+  stored models on a server, you can send all these events to analysis tool, like <ExternalLink
+    href="https://posthog.com/">Posthog,</ExternalLink> or just log them to the browser console during development.</P>
+<P>Some day customers will ask you for a feature, and they will say: "When X happens, can you also do Y. At this moment you will be ready
+  for it.</P>
+
+<H3>Combining events</H3>
+<P>Another example: You want to display, that you are loading some data from the backend. When thinking data driven, you put a
+  boolean in you application state. The event approach is different: When there was as 'loading' command, and you the resource is not
+  returned yet, you are sure that your application is loading. Not considering the order, the code can look like this:</P>
+
+```typescript
+import {filter, map} from 'rxjs';
+
+const isLoading$ = GlobalEvent$.pipe(
+  filter(event => event.type === 'LOADING_COMMAND' || event.type === 'RESOURCE_LOADED'),
+  map(event => event.type === 'LOADING_COMMAND'),
+);
+```
+
+<H3>How to display data?</H3>
+<P>I hope that you still have the mindset in mind to split querying data and emitting commands. Also, we live in modern times, where it is
+  easy to push updates from the servers to the client. So in the end it is just a stream of data. A repository might look like this:</P>
+
+```typescript
+import { Observable } from 'rxjs';
+
+interface IPostRepository {
+  readonly Posts$: Observable<Post[]>;
+  readonly Post$: Observable<Post>;
+
+  loadPost(postId: string): void;
+  loadPosts(): void;
+}
+```
+
+<P>Your UI component can now the option to subscribe to the `Posts$` observable for displaying the data.</P>
+
+<H2>When to use it</H2>
+<P>You might have guesses it, this approach is to much for a static website. Actually the post, you read right now was written with
+  Markdown. But if you are building a website with a high amount of interactivity, you want to push updates from the server to the client,
+  or are communicating a lot with stakeholders, you might give it a try.</P>
