@@ -12,8 +12,8 @@ const style = cva('text-xl md:text-3xl py-3 md:py-6', {
 
 export const H3 = forwardRef<HTMLHeadingElement, PropsWithChildren<VariantProps<typeof style>>>(
   ({ children, ...props }, ref) => (
-    <h2 ref={ref} className={style(props)}>
+    <h3 ref={ref} className={style(props)}>
       {children}
-    </h2>
+    </h3>
   )
 );
