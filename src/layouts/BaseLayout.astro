@@ -7,7 +7,7 @@ import { Page } from '../components/js/Atom/Layout/Page';
 const { title = 'Welcome', description = '' } = Astro.props;
 
 let redirectUrl = Astro.url.pathname.split('/')
-    .filter(path => path !== '/')
+    .filter(path => path && path !== '/')
     .slice(0, -1).join('/') || '/';
 const isCurrentPage = Astro.url.pathname === redirectUrl;
 
