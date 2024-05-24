@@ -35,7 +35,7 @@ import { ExternalLink, H2, H3, Italic, P } from '../../components/js/Atom/Typogr
     rxjs.</ExternalLink></P>
 
 ```tsx
-import { Subject } from 'rxjs';
+import {Subject} from 'rxjs';
 
 const GlobalEvent$ = new Subject();
 
@@ -57,7 +57,7 @@ const UiComponent = ({ postId }) => {
       GlobalEvent$.next(event);
   };
 
-  return <button onClick={()=>handleReleasePost('123')}>Release</button>;
+  return <button onClick={() => handleReleasePost('123')}>Release</button>;
 };
 ```
 
