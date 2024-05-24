@@ -7,11 +7,13 @@ import { H1 } from '../Atom/Typography/H1.tsx';
 
 interface IProps {
   heading?: string;
+  anchor?: string;
 }
 
-export const FullScreenSection: FunctionComponent<PropsWithChildren<IProps>> = ({ children, heading }) => {
+export const FullScreenSection: FunctionComponent<PropsWithChildren<IProps>> = ({ children, heading, anchor }) => {
   return (
     <Section.Root size="screen">
+      {anchor && <a id={anchor}></a>}
       <Flex.Root direction="column" width="full">
         {heading && (
           <Flex.Item>

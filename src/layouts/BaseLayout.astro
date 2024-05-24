@@ -4,13 +4,20 @@ import Header from '../components/astro/Header.astro';
 
 import { Page } from '../components/js/Atom/Layout/Page';
 
-const { title = "Welcome", description = ""} = Astro.props;
+const { title = 'Welcome', description = '' } = Astro.props;
+
+let redirectUrl = Astro.url.pathname.split('/').slice(0, -1).join('/') || '/';
+const isCurrentPage = Astro.url.pathname === redirectUrl;
+
+if (!isCurrentPage && redirectUrl === '/') {
+    redirectUrl = '/#navigation';
+}
 ---
 
 <html lang="en">
 <Header title={title} description={description}/>
 <body>
-<Page>
+<Page closeUrl={isCurrentPage ? undefined : redirectUrl}>
     <slot/>
 </Page>
 </body>
