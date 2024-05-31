@@ -8,7 +8,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { LinkBox } from '../../components/js/Molecule/LinkBox';
 import { Flex } from '../../components/js/Atom/Layout/Flex';
 import { Container } from '../../components/js/Atom/Layout/Container';
-import { P } from '../../components/js/Atom/Typography';
 
 const allPosts = (await getCollection('posts')).filter(post => post.data.draft !== true);
 ---
