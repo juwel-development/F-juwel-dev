@@ -9,7 +9,7 @@ const logoVariants = cva('pointer-events-none', {
       small: 'w-16 h-16',
       medium: 'w-24 h-24',
       large: 'w-32 h-32',
-      full: 'w-screen -mt-12 md:-mt-16 lg:-mt-24'
+      full: 'w-full max-h-64'
     }
   }
 });
