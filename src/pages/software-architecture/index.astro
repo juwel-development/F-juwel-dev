@@ -16,8 +16,7 @@ const allPosts = (await getCollection('posts')).filter(post => post.data.draft !
 <BaseLayout title="Software Architecture">
     <FullScreenSection heading="Software Architecture">
         <Container>
-            <P>This page is under construction. More content (and a better design) will come soon.</P>
-            <Flex.Root justify="between">
+            <Flex.Root justify="around">
                 {allPosts.map((post) => (
                         <Flex.Item>
                             <LinkBox to={`software-architecture/${post.slug}`}>{post.data.title}</LinkBox>
