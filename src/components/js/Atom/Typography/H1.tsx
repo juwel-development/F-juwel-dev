@@ -7,7 +7,7 @@ import { fontVariant } from './fontVariant';
 const style = cva('text-body-1 py-3 md:py-6', {
     variants: fontVariant,
     defaultVariants: {
-        size: '3xl',
+        size: '6xl',
     }
 });
 
