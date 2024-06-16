@@ -18,13 +18,16 @@ interface IProps {
   href: string;
 }
 
-export const ExternalLink: FunctionComponent<PropsWithChildren<IProps & VariantProps<typeof externalLink>>> = ({
-  children,
-  href,
-  underline,
-}) => {
+export const ExternalLink: FunctionComponent<
+  PropsWithChildren<IProps & VariantProps<typeof externalLink>>
+> = ({ children, href, underline }) => {
   return (
-    <a href={href} target="_blank" className={externalLink({ underline })} rel="noreferrer">
+    <a
+      href={href}
+      target="_blank"
+      className={externalLink({ underline })}
+      rel="noreferrer"
+    >
       {children}
     </a>
   );

@@ -1,6 +1,6 @@
 export const fontVariant = {
   color: {
-    contrast: 'text-contrast-500'
+    contrast: 'text-contrast-500',
   },
   align: {
     left: 'text-left',

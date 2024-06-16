@@ -38,15 +38,14 @@ const flexRoot = cva('flex gap-6 max-w-full', {
   },
 });
 
-const FlexRoot: FunctionComponent<PropsWithChildren<VariantProps<typeof flexRoot>>> = ({
-  children,
-  direction,
-  wrap,
-  justify,
-  items,
-  width,
-}) => {
-  return <div className={flexRoot({ direction, wrap, justify, items, width })}>{children}</div>;
+const FlexRoot: FunctionComponent<
+  PropsWithChildren<VariantProps<typeof flexRoot>>
+> = ({ children, direction, wrap, justify, items, width }) => {
+  return (
+    <div className={flexRoot({ direction, wrap, justify, items, width })}>
+      {children}
+    </div>
+  );
 };
 
 const flexItem = cva('max-w-full', {
@@ -74,12 +73,9 @@ const flexItem = cva('max-w-full', {
   },
 });
 
-const FlexItem: FunctionComponent<PropsWithChildren<VariantProps<typeof flexItem>>> = ({
-  children,
-  grow,
-  flex,
-  width,
-}) => {
+const FlexItem: FunctionComponent<
+  PropsWithChildren<VariantProps<typeof flexItem>>
+> = ({ children, grow, flex, width }) => {
   return <div className={flexItem({ grow, flex, width })}>{children}</div>;
 };
 

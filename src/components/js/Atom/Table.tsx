@@ -25,7 +25,9 @@ const TableBody: FunctionComponent<PropsWithChildren> = ({ children }) => {
 };
 
 const TableCell: FunctionComponent<PropsWithChildren> = ({ children }) => {
-  return <td className="text-left pr-6 py-6 md:py-12 align-text-top">{children}</td>;
+  return (
+    <td className="text-left pr-6 py-6 md:py-12 align-text-top">{children}</td>
+  );
 };
 
 export const Table = {

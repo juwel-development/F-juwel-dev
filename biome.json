@@ -1,0 +1,24 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.8.1/schema.json",
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true
+		},
+		"ignore": ["**/node_modules/**", "**/dist/**", "**/.astro/**"]
+	},
+	"formatter": {
+		"enabled": true,
+		"ignore": ["**/node_modules/**", "**/dist/**", "**/.astro/**"]
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single",
+			"indentStyle": "space",
+			"indentWidth": 2
+		}
+	}
+}

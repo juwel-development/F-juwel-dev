@@ -9,11 +9,14 @@ interface IProps {
 const linkStyle = cva('underline', {
   variants: fontVariant,
   defaultVariants: {
-    color: 'contrast'
-  }
+    color: 'contrast',
+  },
 });
 
-export const InternalLink: FunctionComponent<PropsWithChildren<IProps>> = ({ children, to }) => {
+export const InternalLink: FunctionComponent<PropsWithChildren<IProps>> = ({
+  children,
+  to,
+}) => {
   return (
     <a className={linkStyle()} href={to}>
       {children}

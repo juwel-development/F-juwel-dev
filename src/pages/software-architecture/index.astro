@@ -5,23 +5,25 @@ import { getCollection } from 'astro:content';
 import { FullScreenSection } from '../../components/js/Molecule/FullScreenSection';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-import { LinkBox } from '../../components/js/Molecule/LinkBox';
-import { Flex } from '../../components/js/Atom/Layout/Flex';
 import { Container } from '../../components/js/Atom/Layout/Container';
+import { Flex } from '../../components/js/Atom/Layout/Flex';
+import { LinkBox } from '../../components/js/Molecule/LinkBox';
 
-const allPosts = (await getCollection('posts')).filter(post => post.data.draft !== true);
+const allPosts = (await getCollection('posts')).filter(
+  (post) => post.data.draft !== true,
+);
 ---
 
 <BaseLayout title="Software Architecture">
-    <FullScreenSection heading="Software Architecture">
-        <Container>
-            <Flex.Root justify="around">
-                {allPosts.map((post) => (
-                        <Flex.Item>
-                            <LinkBox to={`software-architecture/${post.slug}`}>{post.data.title}</LinkBox>
-                        </Flex.Item>
-                ))}
-            </Flex.Root>
-        </Container>
-    </FullScreenSection>
+  <FullScreenSection heading="Software Architecture">
+    <Container>
+      <Flex.Root justify="around">
+        {allPosts.map((post) => (
+          <Flex.Item>
+            <LinkBox to={`software-architecture/${post.slug}`}>{post.data.title}</LinkBox>
+          </Flex.Item>
+        ))}
+      </Flex.Root>
+    </Container>
+  </FullScreenSection>
 </BaseLayout>

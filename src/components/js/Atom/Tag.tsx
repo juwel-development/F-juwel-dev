@@ -5,7 +5,11 @@ const TagRoot: FunctionComponent<PropsWithChildren> = ({ children }) => {
 };
 
 const TagItem: FunctionComponent<PropsWithChildren> = ({ children }) => {
-  return <span className="bg-primary-500 text-primary-900 px-2 py-1 text-sm rounded-lg">{children}</span>;
+  return (
+    <span className="bg-primary-500 text-primary-900 px-2 py-1 text-sm rounded-lg">
+      {children}
+    </span>
+  );
 };
 
 export const Tag = {

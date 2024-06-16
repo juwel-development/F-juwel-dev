@@ -5,16 +5,17 @@ import { forwardRef } from 'react';
 import { fontVariant } from './fontVariant';
 
 const style = cva('text-body-1 py-3 md:py-6', {
-    variants: fontVariant,
-    defaultVariants: {
-        size: '6xl',
-    }
+  variants: fontVariant,
+  defaultVariants: {
+    size: '6xl',
+  },
 });
 
-export const H1 = forwardRef<HTMLHeadingElement, PropsWithChildren<VariantProps<typeof style>>>(
-    ({ children, ...props }, ref) => (
-        <h1 ref={ref} className={style(props)}>
-            {children}
-        </h1>
-    )
-);
+export const H1 = forwardRef<
+  HTMLHeadingElement,
+  PropsWithChildren<VariantProps<typeof style>>
+>(({ children, ...props }, ref) => (
+  <h1 ref={ref} className={style(props)}>
+    {children}
+  </h1>
+));
