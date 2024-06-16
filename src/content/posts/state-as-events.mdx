@@ -6,6 +6,7 @@ description: Discover the advantages of modeling your frontend around events. Le
 tags:
   - frontend
   - state management
+author: Jens-Uwe Lössl
 ---
 
 import { ExternalLink, H2, H3, Italic, P } from '../../components/js/Atom/Typography/index.ts'
@@ -102,6 +103,6 @@ interface IPostRepository {
 <P>Your UI component can now the option to subscribe to the `Posts$` observable for displaying the data.</P>
 
 <H2>When to use it</H2>
-<P>You might have guesses it, this approach is to much for a static website. Actually the post, you read right now was written with
-  Markdown. But if you are building a website with a high amount of interactivity, you want to push updates from the server to the client,
-  or are communicating a lot with stakeholders, you might give it a try.</P>
+<P>If you develop a website, that mostly deals with static content, this approach is not the best approach. But if you are working on an
+  application and you have a high amount of user interactions, or your application state can be modified by multiple sources, this
+  approach want to give it a try.</P>

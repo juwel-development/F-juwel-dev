@@ -2,17 +2,19 @@
 
 import { Article } from '../components/js/Atom/Layout/Article';
 import { Container } from '../components/js/Atom/Layout/Container';
-import { H1 } from '../components/js/Atom/Typography';
+import { H1, P } from '../components/js/Atom/Typography';
 import BaseLayout from './BaseLayout.astro';
 
-const { title, description } = Astro.props;
+const { title, description, publishedAt, author } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
-    <Container>
-        <Article>
-            <H1>{title}</H1>
-            <slot />
-        </Article>
-    </Container>
+  <Container>
+    <Article>
+      <H1>{title}</H1>
+      <P>published by {author} on {publishedAt.toLocaleDateString('en-US')}</P>
+      <slot />
+    </Article>
+  </Container>
 </BaseLayout>
+
