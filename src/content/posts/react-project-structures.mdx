@@ -1,0 +1,42 @@
+---
+
+title: Find what you need 🔍 How to structure your React projects
+publishedAt: 2024-09-01
+description: There are many ways to structure your React projects. Discover the most common patterns and learn how to choose the right one for your project. Explore the pros and cons of different project structures and find out how to create a scalable and maintainable React application.
+tags:
+  - frontend
+  - structure
+author: Jens-Uwe Lössl
+draft: true
+---
+
+import { H2, P } from '../../components/js/Atom/Typography'
+
+<H2>What is relevant when thinking about react project structure?</H2>
+<P>Before thinking about how, we should make clear what is the goal of structuring a React project and what we are trying to archive.</P>
+<P>At first, we should see the way, how we organize our code as a tool to communicate the architecture and the business language of our
+  application. We want to create a structure that is easy to maintain, scale, but is easy to understand. Also, the structure of the project
+  is like a map for developers, where to find what they are looking for and where to implement parts of the feature. So the folder
+  structure needs to fit to the project that your are building.</P>
+
+<H2>Do not overthink!</H2>
+<P>That's the recommendation from the react team. I can subscribe to the core of this message. When you build something small, focus on
+  getting it done. Also, there is a concept of incremental architecture. You can reorganise a small project whenever you feel like. You can
+  change folder structures, split components without a major afford in a small application.</P>
+<P>When your projects grows, your project structure will grow with it. You will see patterns that are repeating and you will see parts of
+  your application that are growing. This is the time to iterate and refactor.</P>
+
+<H2>What to do in a business context?</H2>
+<P>When you are part of a organisation, you build something that need to be maintained for a long time, you need to think more about your
+  project structure. In this case, I like to "zoom out" and take a look on the business? What parts of the application needs to be tested?
+  What is the test strategy? Is the organization growing and is there a need in building a design system? How experienced is the development
+  team? How much state do you will have in the client?</P>
+<P>Next step, is to decide on a frontend architecture that fulfill the gathered requirements. If you have a department that is responsible
+  for the design. You want to use the terminology that they are using in your codebase. So when they are using atomic design, you also want
+  to reflect this approach in your project structure, because it enables developers to communicate very specific.</P>
+<P>Also important is how your requirements are getting defined: If they have the form of: "When X happens, Y should happen.", you might want
+  to use an architecture that works with events (for example Flux or an Event Driven Architecture). When a domain expert can find their
+  explanation in your code - than this is good code.</P>
+
+<H2>What parts has a common frontend?</H2>
+<P>Business application usually include multiple pages. It interacts with a backend and also it </P>

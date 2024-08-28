@@ -9,9 +9,9 @@ import { Container } from '../../components/js/Atom/Layout/Container';
 import { Flex } from '../../components/js/Atom/Layout/Flex';
 import { LinkBox } from '../../components/js/Molecule/LinkBox';
 
-const allPosts = (await getCollection('posts')).filter(
-  (post) => post.data.draft !== true,
-);
+const allPosts = (await getCollection('posts'))
+  .filter((post) => post.data.draft !== true)
+  .sort((a, b) => b.data.publishedAt - a.data.publishedAt);
 ---
 
 <BaseLayout title="Software Architecture">
