@@ -11,7 +11,7 @@ import { LinkBox } from '../../components/js/Molecule/LinkBox';
 
 const allPosts = (await getCollection('posts'))
   .filter((post) => post.data.draft !== true)
-  .sort((a, b) => b.data.publishedAt - a.data.publishedAt);
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 ---
 
 <BaseLayout title="Software Architecture">
