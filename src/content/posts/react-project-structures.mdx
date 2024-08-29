@@ -1,5 +1,4 @@
 ---
-
 title: Find what you need 🔍 How to structure your React projects
 publishedAt: 2024-09-01
 description: There are many ways to structure your React projects. Discover the most common patterns and learn how to choose the right one for your project. Explore the pros and cons of different project structures and find out how to create a scalable and maintainable React application.
@@ -10,7 +9,8 @@ author: Jens-Uwe Lössl
 draft: true
 ---
 
-import { H2, P } from '../../components/js/Atom/Typography'
+import { H2, H3, Italic, P } from '../../components/js/Atom/Typography'
+import { UnsortedList } from '../../components/js/Atom/List'
 
 <H2>What is relevant when thinking about react project structure?</H2>
 <P>Before thinking about how, we should make clear what is the goal of structuring a React project and what we are trying to archive.</P>
@@ -38,5 +38,26 @@ import { H2, P } from '../../components/js/Atom/Typography'
   to use an architecture that works with events (for example Flux or an Event Driven Architecture). When a domain expert can find their
   explanation in your code - than this is good code.</P>
 
-<H2>What parts has a common frontend?</H2>
-<P>Business application usually include multiple pages. It interacts with a backend and also it </P>
+<H2>What parts has a frontend of a common business application?</H2>
+<P>Business application usually has different parts that need to interact with each other:</P>
+<UnsortedList.Root>
+  <UnsortedList.Item>Routing</UnsortedList.Item>
+  <UnsortedList.Item>Pages</UnsortedList.Item>
+  <UnsortedList.Item>UI components</UnsortedList.Item>
+  <UnsortedList.Item>Backend communication</UnsortedList.Item>
+  <UnsortedList.Item>Business specific logic(for example validation, and access control)</UnsortedList.Item>
+  <UnsortedList.Item>State management</UnsortedList.Item>
+</UnsortedList.Root>
+<Italic>A good project structure works like a map, that helps to navigate between each parts of the application and is setting boundaries
+  where to implement which parts of the code.</Italic>
+<P>The question is now, how can we separating those thing:</P>
+<H3>Feature Slices</H3>
+<P>A feature slice is a part of the application that is responsible for a specific feature. It contains all the parts that are needed to
+  implement this feature. This includes the UI components, the business logic, the state management and the backend communication within one
+  folder. The advantage is that on the first level of the folder structure it make clear, what the application can do, and what problems it
+  solves. I have the feeling that ths approach only works well if your application only consists of independent feature, and you are
+  actively avoiding to share implementation details - this is a little bit against the philosophy of react components and their possibility
+  to reuse them. Where to put a button? In a separate module?</P>
+<H3>By Architecture</H3>
+<P>Every piece of software has some architectural choices. My goto is to put this choice on the first level. So if you decided on a Flux
+  Architecture you might want to have a folder called 'Flux'. If you are using a layered architecture, the first level will become the </P>
