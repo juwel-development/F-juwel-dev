@@ -1,15 +1,15 @@
 ---
 title: Find what you need 🔍 How to structure your React projects
-publishedAt: 2024-09-01
+publishedAt: 2024-09-14
 description: There are many ways to structure your React projects. Discover the most common patterns and learn how to choose the right one for your project. Explore the pros and cons of different project structures and find out how to create a scalable and maintainable React application.
 tags:
   - frontend
   - structure
 author: Jens-Uwe Lössl
-draft: true
+draft: false
 ---
 
-import { H2, H3, Italic, P } from '../../components/js/Atom/Typography'
+import { ExternalLink, H2, H3, Italic, P } from '../../components/js/Atom/Typography'
 import { UnsortedList } from '../../components/js/Atom/List'
 
 <H2>What is relevant when thinking about react project structure?</H2>
@@ -60,4 +60,13 @@ import { UnsortedList } from '../../components/js/Atom/List'
   to reuse them. Where to put a button? In a separate module?</P>
 <H3>By Architecture</H3>
 <P>Every piece of software has some architectural choices. My goto is to put this choice on the first level. So if you decided on a Flux
-  Architecture you might want to have a folder called 'Flux'. If you are using a layered architecture, the first level will become the </P>
+  Architecture you might want to have a folder called 'Flux'. If you are using a layered architecture, the first level will become the of
+  the folder structure can communicate this decision. On next level I like to communicate the `domain` model. So when multiple teams are
+  working on the project the responsibilities are clear. I am also using 'Atomic design' as a design workflow. So my components can be found
+  in folders called 'Atom' and 'Molecule' that are not connected to a domain. 'Organism' and 'Page' usually include are connected to
+  business logic, so these components will be placed in the domain folders.</P>
+<P>You might wonder, how to deal with shared logic? My first take is to avoid any 'common helper' functions if you can. If there is no way
+  of avoiding it, than I have on first level a folder called 'Framework'. The idea is, that the 'Framework' folder can be split out of the
+  project and also be served as an npm package. An example you can find here: <ExternalLink
+    href="https://www.npmjs.com/package/@juwel-development/react-observable-tools">react-observable-tools</ExternalLink>. I includes basic
+  hooks that I use for connecting rxjs with react.</P>
