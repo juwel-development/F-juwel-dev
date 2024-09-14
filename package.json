@@ -12,7 +12,6 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/check": "^0.7.0",
 		"@astrojs/mdx": "^3.0.0",
 		"@astrojs/react": "^3.3.4",
 		"@astrojs/sitemap": "^3.1.4",
@@ -31,6 +30,7 @@
 		"typescript": "^5.4.5"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.8.1"
+		"@astrojs/check": "^0.9.3",
+		"@biomejs/biome": "^1.8.1"
 	}
 }
