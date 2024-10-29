@@ -1,5 +1,7 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
+
+const currentPath = `https://juwel.dev${Astro.url.pathname}`;
 ---
 
 <head>
@@ -17,6 +19,7 @@ import { ViewTransitions } from 'astro:transitions';
     <meta name="og:image" content="/img/logo.png"/>
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://juwel.dev"/>
+    <link rel="canonical" href={currentPath}/>
     <ViewTransitions/>
     <script>
         // @ts-ignore
