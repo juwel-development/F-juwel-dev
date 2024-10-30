@@ -1,7 +1,10 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
 
-const currentPath = `https://juwel.dev${Astro.url.pathname}`;
+let currentPath = `https://juwel.dev${Astro.url.pathname}`;
+if (currentPath.endsWith('/')) {
+  currentPath = currentPath.slice(0, -1);
+}
 ---
 
 <head>
