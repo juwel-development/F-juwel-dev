@@ -2,7 +2,7 @@ import { type VariantProps, cva } from 'class-variance-authority';
 import type { FunctionComponent, PropsWithChildren } from 'react';
 import { fontVariant } from '../Typography/fontVariant.ts';
 
-const style = cva('pb-4 pt-1 leading-relaxed list-disc list-inside', {
+const style = cva('pb-2 pt-1 leading-relaxed list-disc list-inside', {
   variants: {
     ...fontVariant,
     size: { ...fontVariant.size, base: 'text-base md:text-lg' },
@@ -17,7 +17,7 @@ const UnsortedListRoot: FunctionComponent<
 };
 
 const ListItem: FunctionComponent<PropsWithChildren> = ({ children }) => {
-  return <li>{children}</li>;
+  return <li className={'my-3'}>{children}</li>;
 };
 
 export const UnsortedList = {
