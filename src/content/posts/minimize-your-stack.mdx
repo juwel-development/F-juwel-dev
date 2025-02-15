@@ -1,79 +1,90 @@
 ---
 title: Minimize your stack 📦 What do you really need?
-publishedAt: 2024-10-01
+publishedAt: 2024-02-15
 description: Get some ideas on how reduce the complexity of your stack. Reduce the number of libraries and tools you are using and focus on the essentials. Learn how to increase your development time by focussing on the core of your application.
 tags:
   - frontend
   - state management
 author: Jens-Uwe Lössl
-draft: true
+draft: false
 ---
 
-import {SortedList} from '../../components/js/Atom/List'
-import {H2, H3, Italic, P, Strong} from '../../components/js/Atom/Typography'
+import { SortedList } from '../../components/js/Atom/List'
+import { H2, H3, Italic, P, Strong } from '../../components/js/Atom/Typography'
 
 <H2>We are developers and we want the newest tech</H2>
 <P>Well, I agree every new tech is appealing and it is always a good idea to test out new framework and technologies.
-    But when deciding what technology suites the project you are building, you need to make sure the tech-stack suites
-    the ambitions and and
-    requirements of your project. But let me tell you something: The best code is the code that does not exist.</P>
+  But when deciding what technology suites the project you are building, you need to make sure the tech-stack suites
+  the ambitions and and
+  requirements of your project. But let me tell you something: The best code is the code that does not exist.</P>
 
 <H2>Customer Centric Thinking</H2>
 <P>The biggest challenge in software development is not to build <Italic>something</Italic>, but to build <Italic>the
-    right thing.</Italic> So before writing the first line of code, put yourself in the mind of the user, and ask
-    yourself:</P>
+  right thing.</Italic> So before writing the first line of code, put yourself in the mind of the user, and ask
+  yourself:</P>
 
 <SortedList.Root>
-    <SortedList.Item>Who will use this code?</SortedList.Item>
-    <SortedList.Item>In which situation will this person use your software?</SortedList.Item>
-    <SortedList.Item>What wants the user to archive when your user is using your software?</SortedList.Item>
+  <SortedList.Item>Who will use this code?</SortedList.Item>
+  <SortedList.Item>In which situation will this person use your software?</SortedList.Item>
+  <SortedList.Item>What wants the user to archive when your user is using your software?</SortedList.Item>
 </SortedList.Root>
 
 <P>The better you understand your users, the better you can derive requirements for your software solution, and these
-    are the requirements that matters. For example when the problem that your are solve with your software is for users
-    that are outside in the nature - maybe even without internet connection - a web app is maybe not the right approach.
-    If you want to build an application for people that are working in an office, a web app is maybe the right
-    approach.</P>
+  are the requirements that matters. For example when the problem that your are solve with your software is for users
+  that are outside in the nature - maybe even without internet connection - a web app is maybe not the right approach.
+  If you want to build an application for people that are working in an office, a web app is maybe the right
+  approach.</P>
 
 <P>I once was a part of a project that was made for biologists. People, that are collecting animal and plant material
-    in the wilderness and
-    than analysing the collected material in a laboratory. This project need a mobile application (e.g. for entering
-    data of the collected
-    material (when and where is the material collected)) but also a web application (for analysing the collected data).
-    Both applications were
-    different in design and functionality, because the same user was using the applications in different situations,
-    with different
-    intentions.</P>
+  in the wilderness and
+  than analysing the collected material in a laboratory. This project need a mobile application (e.g. for entering
+  data of the collected
+  material (when and where is the material collected)) but also a web application (for analysing the collected data).
+  Both applications were
+  different in design and functionality, because the same user was using the applications in different situations,
+  with different
+  intentions.</P>
 
 <H3>The user does not care about the technology and the code that you are using</H3>
 
 <P>To be honest the only people, who care about the technology that you are using are developers. The end-user is not
-    caring about the code and how well it is structured, but he cares about new features and the stability of the
-    system. So you do not need a micro service architecture, as long as you do not have a user base that is so big that
-    you need to scale your application.</P>
+  caring about the code and how well it is structured, but he cares about new features and the stability of the
+  system. So you do not need a micro service architecture, as long as you do not have a user base that is so big that
+  you need to scale your application.</P>
 
 <P>But what are your users actually care about? Well, it depends on the application that you are building. But if you
-    start small and maybe also have to report to investors. Leave out everything that your are not confident, that it
-    will speed up the development process. In early stages of the product life cycle, you want to be fast and deliver
-    features quickly, so your users will get a better idea in which direction you go. Because the best thing early is to
-    implement a fast feedback loop with your users. So you can validate your ideas and assumptions, this is way more
-    important than using the newest tech.</P>
+  start small and maybe also have to report to investors. Leave out everything that your are not confident, that it
+  will speed up the development process. In early stages of the product life cycle, you want to be fast and deliver
+  features quickly, so your users will get a better idea in which direction you go. Because the best thing early is to
+  implement a fast feedback loop with your users. So you can validate your ideas and assumptions, this is way more
+  important than using the newest tech.</P>
 
 <H3>But doesn't new technology speed up our workflow?</H3>
 <P>Good point! I am not against anything new, when you start building a project. What I am saying is, you need to be
-    sure about <Strong>why</Strong> you pick it. For example once I was part of a startup, that was very relient on
-    hardware infrastructure. So we choose to deploy our services on AWS - way more expensive than self hosting, isn't
-    it? Well I question this, when you have to take care about your servers by yourself / or hire a DevOps engineer, it
-    would be more expensive than deploying it a cloud provider. But the best thing: As we didn't need to care much about
-    the hardware (besides a lot of configuration🤣), we were able to focus on our daily doing on delivering and building
-    the application for our users.</P>
+  sure about <Strong>why</Strong> you pick it. For example once I was part of a startup, that was very relient on
+  hardware infrastructure. So we choose to deploy our services on AWS - way more expensive than self hosting, isn't
+  it? Well I question this, when you have to take care about your servers by yourself / or hire a DevOps engineer, it
+  would be more expensive than deploying it a cloud provider. But the best thing: As we didn't need to care much about
+  the hardware (besides a lot of configuration🤣), we were able to focus on our daily doing on delivering and building
+  the application for our users.</P>
 
 <P>My small 'free-time' projects are all hosted on the Google Cloud and use the Google services, like Firebase
-    Database. Is it the best solution? When thinking about cost efficiency? No. Is it the best for my use-case? Maybe
-    also not. But it is a solution that helps me no focus on the development and to build up a value stream for the
-    project. I have a layer in my applications that decouple the database from the rest of the application, so
-    whenever I reached the point to change the infrastructure, I can migrate away from the current stack, I am
-    using.</P>
+  Database. Is it the best solution? When thinking about cost efficiency? No. Is it the best for my use-case? Maybe
+  also not. But it is a solution that helps me no focus on the development and to build up a value stream for the
+  project. I have a layer in my applications that decouple the database from the rest of the application, so
+  whenever I reached the point to change the infrastructure, I can migrate away from the current stack, I am
+  using.</P>
+
+<H3>The best code is the code you don't write</H3>
+
+<P>Every code that is written needs (some kind of) maintain. So the less code you need to write - the less afford you will have in the
+  future. Business people know the term TCO - total cost of ownership. The term is describing how expensive it is to own a product. For
+  example: After you bought a car, you still need to pay for insurance, gasoline, repairs and a lot of other stuff. This concept is also the
+  case for software. If you offer a software service to other people, you need to pay for keeping it up to date, you need to fix security
+  issue, update dependencies, pay for the hosting, and more. So often it is cheaper to buy some external software and service and connect it
+  with yours than developing everything by yourself. A lot of 'problems' are also already solved by the Open Source community, so before
+  doing everything by yourself, do some research, if you can use an already existing solution.</P>
 
 <H3>Final thoughts</H3>
-<P>Whenever you pick </P>
+<P>Whenever you pick a tech stack, try to keep it simple and maintainable. Ask what you really need for success and DON'T FORGET YOUR
+  USERS.</P>
