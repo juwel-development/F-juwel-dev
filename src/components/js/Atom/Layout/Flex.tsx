@@ -2,7 +2,7 @@ import type { VariantProps } from 'class-variance-authority';
 import { cva } from 'class-variance-authority';
 import type { FunctionComponent, PropsWithChildren } from 'react';
 
-const flexRoot = cva('flex gap-6 max-w-full', {
+const flexRoot = cva('flex gap-12 max-w-full', {
   variants: {
     direction: {
       row: 'flex-row w-full',
