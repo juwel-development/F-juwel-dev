@@ -1,42 +1,44 @@
 ---
 
-title: Rethink state💡 Why you should model around events
+title: Rethink State💡 Why You Should Model Events
+description: Learn how event-driven architecture transforms frontend development by improving state management, user experience, and responsiveness. Explore practical techniques today!
 publishedAt: 2024-05-23
-description: Discover the advantages of modeling your frontend around events. Learn how event-driven architecture can enhance user experiences, improve state management, and increase application responsiveness. Explore practical techniques for implementing event-based models in your frontend projects."
 tags:
   - frontend
+  - reactive programming
   - state management
+  - event-driven architecture
 author: Jens-Uwe Lössl
+
 ---
 
-import { ExternalLink, H2, H3, Italic, P } from '../../components/js/Atom/Typography/index.ts'
+import { ExternalLink, H2, H3, P } from '../../components/js/Atom/Typography'
+import { UnsortedList } from '../../components/js/Atom/List'
 
-<H2>The data-driven world we live in...</H2>
-<P>'Data is money', I am sure you already heard about this term. It's true, data is the most valuable asset in the world today. Companies
-  like Google, Facebook, Amazon, and many others were building their business model around data.</P>
-<P>And data is what we need to handle in our applications: We have to display something to our users, we have to process data and
-  we have to push data to a backend server, or other systems.</P>
+<H2>The Data-Driven World We Live In</H2>
+<P>'Data is money'—you’ve probably heard this phrase before. It’s true; data is the most valuable asset in the world today. Companies like
+  Google, Facebook, and Amazon have built their business models around data.</P>
+<P>Applications, whether web or mobile, revolve around data: displaying it, processing it, and sending it to backends or external systems.
+  The challenge lies in managing data efficiently to provide seamless user experiences.</P>
 
-<H2>The CRUD-ish way</H2>
-<P>A lot of web application are built 'CRUD' -alike: You load a resource from the backend, the user is updating some properties, and you
-  send the updated resource back to the backend. Thinking this way, results in an UI that is made for those operations. The result is an
-  application that provides a lot of list views, create, update, and delete possibilities on resources. Assuming you are building a blog,
-  in the 'crud-ish' way you think about creating a post, updating it and deleting it.</P>
+<H2>The CRUD Approach vs. Event-Driven Architecture</H2>
+<P>Many web applications follow a CRUD (Create, Read, Update, Delete) approach: you fetch a resource from the backend, allow the user to
+  modify it, and send the updated resource back. This results in UI structures built around data operations—list views, create/update forms,
+  and delete actions. For example, if you’re building a blog, a CRUD mindset means focusing on creating, updating, and deleting posts.</P>
 
-<P>The problem is: We as human do not think about 'updating' some data. We are using you web apps <Italic>for accomplish a task -
-  quickly.</Italic> So wouldn't it be natural, that we model our application around those tasks? Displaying a list of unreleased posts with
-  a release button. This could be a solution for quickly releasing posts from draft.</P>
+<P>However, humans don’t think in terms of updating data. We use applications to accomplish tasks quickly. Wouldn’t it be more intuitive to
+  model the application around tasks instead of data manipulations? For example, instead of manually updating post statuses, you could
+  display a list of unpublished posts with a ‘Release’ button to quickly publish them.</P>
 
-<H2>Modeling around events</H2>
-<H3>Let's start with just commands</H3>
+<H2>Modeling Around Events</H2>
 
-<P>To make it easier to follow, we should reduce complexity and do a little trick: Let's do not think about what we show and only think
-  about the interactions of a user. Lets call them `commands`. Everything that has to do with UI is only allowed to emit/dispatch these
-  commands. An example for emitting an event to a global <ExternalLink href={"https://rxjs.dev/guide/subject"}>subject from
-    rxjs.</ExternalLink></P>
+<H3>Starting with Commands</H3>
+<P>To simplify the shift in thinking, let’s introduce a small trick: separate UI interactions from UI state. Instead of directly modifying
+  data, the UI should only dispatch *commands*—user intents that trigger backend logic. Consider this example of emitting an event to a
+  global <ExternalLink href={"https://rxjs.dev/guide/subject"}>RxJS subject.</ExternalLink></P>
 
 ```tsx
-import {Subject} from 'rxjs';
+import { Subject } from 'rxjs';
 
 const GlobalEvent$ = new Subject();
 
@@ -50,43 +52,45 @@ class ReleasePostPayload {
 }
 
 const UiComponent = ({ postId }) => {
-
   const handleReleasePost = (postId: string) => {
       const event = new ReleasePostEvent();
       event.payload.postId = postId;
-
       GlobalEvent$.next(event);
   };
 
-  return <button onClick={() => handleReleasePost('123')}>Release</button>;
+  return <button onClick={() => handleReleasePost(postId)}>Release</button>;
 };
 ```
 
-<H3>Now, what to do with these events?</H3>
-<P>This is where the magic happens: You can do whatever you want. Really 🚀🚀🚀</P>
-<P>You will run into a situations, that you have multiple event listeners registered. Some ideas: You can use these events to update
-  stored models on a server, you can send all these events to analysis tool, like <ExternalLink
-    href="https://posthog.com/">Posthog,</ExternalLink> or just log them to the browser console during development.</P>
-<P>Some day customers will ask you for a feature, and they will say: "When X happens, can you also do Y. At this moment you will be ready
-  for it.</P>
+<H3>What Happens to These Events?</H3>
+<P>This is where the magic happens: you can handle events however you like. 🚀</P>
+<P>Instead of tightly coupling state changes to UI actions, events allow for greater flexibility. Here are some possibilities:</P>
+<UnsortedList.Root>
+  <UnsortedList.Item>Update stored models on the server.</UnsortedList.Item>
+  <UnsortedList.Item>Send events to analytics tools like <ExternalLink
+    href="https://posthog.com/">PostHog.</ExternalLink></UnsortedList.Item>
+  <UnsortedList.Item>Log events to the browser console during development.</UnsortedList.Item>
+</UnsortedList.Root>
+<P>Imagine a customer requests a feature: *“When X happens, can you also do Y?”* With an event-driven model, you’re already prepared to
+  handle it efficiently.</P>
 
-<H3>Combining events</H3>
-<P>Another example: You want to display, that you are loading some data from the backend. When thinking data driven, you put a
-  boolean in you application state. The event approach is different: When there was as 'loading' command, and you the resource is not
-  returned yet, you are sure that your application is loading. Not considering the order, the code can look like this:</P>
+<H3>Combining Events for Smarter UI State</H3>
+<P>Consider a loading indicator: in a CRUD-based system, you typically set a `boolean` flag in the application state. With events, you don’t
+  need explicit state management. If a ‘loading’ command is dispatched and a corresponding ‘resource loaded’ event hasn’t been received yet,
+  you know the application is still loading. The logic could look like this:</P>
 
 ```typescript
-import {filter, map} from 'rxjs';
+import { filter, map } from 'rxjs';
 
 const isLoading$ = GlobalEvent$.pipe(
   filter(event => event.type === 'LOADING_COMMAND' || event.type === 'RESOURCE_LOADED'),
-  map(event => event.type === 'LOADING_COMMAND'),
+  map(event => event.type === 'LOADING_COMMAND')
 );
 ```
 
-<H3>How to display data?</H3>
-<P>I hope that you still have the mindset in mind to split querying data and emitting commands. Also, we live in modern times, where it is
-  easy to push updates from the servers to the client. So in the end it is just a stream of data. A repository might look like this:</P>
+<H3>Querying Data Efficiently</H3>
+<P>When designing applications, it's crucial to separate querying data from emitting commands. Fortunately, modern technologies allow
+  pushing updates from servers to clients, making data retrieval seamless. A repository pattern might look like this:</P>
 
 ```typescript
 import { Observable } from 'rxjs';
@@ -100,9 +104,20 @@ interface IPostRepository {
 }
 ```
 
-<P>Your UI component can now the option to subscribe to the `Posts$` observable for displaying the data.</P>
+<P>Your UI components can subscribe to `Posts$` to reactively display data as it updates.</P>
 
-<H2>When to use it</H2>
-<P>If you develop a website, that mostly deals with static content, this approach is not the best approach. But if you are working on an
-  application and you have a high amount of user interactions, or your application state can be modified by multiple sources, this
-  approach want to give it a try.</P>
+<H2>When Should You Use Event-Driven Architecture?</H2>
+<P>Not every application needs an event-driven approach. If you’re building a static website with minimal user interactions, a CRUD-based
+  architecture might suffice. However, consider using event-driven architecture in scenarios such as:</P>
+<UnsortedList.Root>
+  <UnsortedList.Item>Applications with high user interactions (e.g., dashboards, collaborative tools).</UnsortedList.Item>
+  <UnsortedList.Item>Systems where multiple sources modify application state (e.g., real-time messaging apps).</UnsortedList.Item>
+  <UnsortedList.Item>Applications requiring reactive state management and asynchronous processing.</UnsortedList.Item>
+</UnsortedList.Root>
+<P>By rethinking state management and structuring applications around events instead of direct data manipulations, you can build more
+  scalable, flexible, and maintainable frontend architectures.</P>
+
+<H2>Conclusion</H2>
+<P>Moving beyond CRUD-based thinking and embracing event-driven architecture enables applications to be more responsive and adaptable. By
+  focusing on *what happens* instead of *how data is updated*, you create a system where business logic is decoupled from UI interactions,
+  making your frontend more powerful and resilient.</P>
