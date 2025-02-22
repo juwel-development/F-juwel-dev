@@ -1,78 +1,87 @@
 ---
-title: Find what you need 🔍 How to structure your React projects
+title: Find What You Need 🔍 How to Structure Your React Projects
 publishedAt: 2024-09-14
-description: There are many ways to structure your React projects. Discover the most common patterns and learn how to choose the right one for your project. Explore the pros and cons of different project structures and find out how to create a scalable and maintainable React application.
+description: Discover the best ways to structure your React projects. Learn common patterns, their pros and cons, and how to choose the right approach to build scalable and maintainable applications.
 tags:
   - frontend
-  - structure
+  - react
+  - project structure
+  - best practices
 author: Jens-Uwe Lössl
 draft: false
 ---
 
-import { ExternalLink, H2, H3, Italic, P } from '../../components/js/Atom/Typography'
+import { ExternalLink, H2, H3, P } from '../../components/js/Atom/Typography'
 import { UnsortedList } from '../../components/js/Atom/List'
 
-<H2>What is relevant when thinking about react project structure?</H2>
-<P>Before thinking about how, we should make clear what is the goal of structuring a React project and what we are trying to archive.</P>
-<P>At first, we should see the way, how we organize our code as a tool to communicate the architecture and the business language of our
-  application. We want to create a structure that is easy to maintain, scale, but is easy to understand. Also, the structure of the project
-  is like a map for developers, where to find what they are looking for and where to implement parts of the feature. So the folder
-  structure needs to fit to the project that your are building.</P>
+<H2>Why Project Structure Matters</H2>
+<P>Before diving into the 'how,' let's define the 'why.' A well-structured React project enhances code readability, scalability, and
+  maintainability. It serves as a roadmap for developers, making it easier to locate files, implement new features, and maintain consistency
+  across the codebase.</P>
+<P>Your project structure should communicate architecture decisions, align with your team's workflow, and scale with your application's
+  complexity.</P>
 
-<H2>Do not overthink!</H2>
-<P>That's the recommendation from the react team. I can subscribe to the core of this message. When you build something small, focus on
-  getting it done. Also, there is a concept of incremental architecture. You can reorganise a small project whenever you feel like. You can
-  change folder structures, split components without a major afford in a small application.</P>
-<P>When your projects grows, your project structure will grow with it. You will see patterns that are repeating and you will see parts of
-  your application that are growing. This is the time to iterate and refactor.</P>
+<H2>Keep It Simple at First</H2>
+<P>The React team advises against overcomplicating project structures. When starting a small project, focus on getting things done. You can
+  always refactor and restructure as your app grows.</P>
+<P>Adopting an incremental approach allows your architecture to evolve naturally. As patterns emerge and certain features expand, you'll
+  recognize the right moments to introduce more structure.</P>
 
-<H2>What to do in a business context?</H2>
-<P>When you are part of a organisation, you build something that need to be maintained for a long time, you need to think more about your
-  project structure. In this case, I like to "zoom out" and take a look on the business? What parts of the application needs to be tested?
-  What is the test strategy? Is the organization growing and is there a need in building a design system? How experienced is the development
-  team? How much state do you will have in the client?</P>
-<P>Next step, is to decide on a frontend architecture that fulfill the gathered requirements. If you have a department that is responsible
-  for the design. You want to use the terminology that they are using in your codebase. So when they are using atomic design, you also want
-  to reflect this approach in your project structure, because it enables developers to communicate very specific.</P>
-<P>Also important is how your requirements are getting defined: If they have the form of: "When X happens, Y should happen.", you might want
-  to use an architecture that works with events (for example Flux or an Event Driven Architecture). When a domain expert can find their
-  explanation in your code - than this is good code.</P>
+<H2>Scaling in a Business Context</H2>
+<P>In a business setting, long-term maintainability is critical. Consider the following factors when structuring your project:</P>
+<UnsortedList.Root>
+  <UnsortedList.Item>Testing requirements and strategy</UnsortedList.Item>
+  <UnsortedList.Item>Team experience and growth potential</UnsortedList.Item>
+  <UnsortedList.Item>State management complexity</UnsortedList.Item>
+  <UnsortedList.Item>Need for a design system</UnsortedList.Item>
+</UnsortedList.Root>
+<P>Align your structure with business terminology. If your design team follows Atomic Design, reflect that in your component organization.
+  If your requirements follow an event-driven model, consider Flux or a similar architecture.</P>
 
-<H2>What parts has a frontend of a common business application?</H2>
-<P>Business application usually has different parts that need to interact with each other:</P>
+<H2>Core Parts of a React Project</H2>
+<P>Most business applications consist of these core elements:</P>
 <UnsortedList.Root>
   <UnsortedList.Item>Routing</UnsortedList.Item>
   <UnsortedList.Item>Pages</UnsortedList.Item>
   <UnsortedList.Item>UI components</UnsortedList.Item>
   <UnsortedList.Item>Backend communication</UnsortedList.Item>
-  <UnsortedList.Item>Business specific logic(for example validation, and access control)</UnsortedList.Item>
+  <UnsortedList.Item>Business logic (e.g., validation, access control)</UnsortedList.Item>
   <UnsortedList.Item>State management</UnsortedList.Item>
 </UnsortedList.Root>
-<Italic>A good project structure works like a map, that helps to navigate between each parts of the application and is setting boundaries
-  where to implement which parts of the code.</Italic>
-<P>The question is now, how can we separating those thing:</P>
-<H3>Feature Slices</H3>
-<P>A feature slice is a part of the application that is responsible for a specific feature. It contains all the parts that are needed to
-  implement this feature. This includes the UI components, the business logic, the state management and the backend communication within one
-  folder. The advantage is that on the first level of the folder structure it make clear, what the application can do, and what problems it
-  solves. I have the feeling that ths approach only works well if your application only consists of independent feature, and you are
-  actively avoiding to share implementation details - this is a little bit against the philosophy of react components and their possibility
-  to reuse them. Where to put a button? In a separate module?</P>
-<H3>By Architecture</H3>
-<P>Every piece of software has some architectural choices. My goto is to put this choice on the first level. So if you decided on a Flux
-  Architecture you might want to have a folder called 'Flux'. If you are using a layered architecture, the first level will become the of
-  the folder structure can communicate this decision. On next level I like to communicate the `domain` model. So when multiple teams are
-  working on the project the responsibilities are clear. I am also using 'Atomic design' as a design workflow. So my components can be found
-  in folders called 'Atom' and 'Molecule' that are not connected to a domain. 'Organism' and 'Page' usually include are connected to
-  business logic, so these components will be placed in the domain folders.</P>
-<P>You might wonder, how to deal with shared logic? My first take is to avoid any 'common helper' functions if you can. If there is no way
-  of avoiding it, than I have on first level a folder called 'Framework'. The idea is, that the 'Framework' folder can be split out of the
-  project and also be served as an npm package. An example you can find here: <ExternalLink
-    href="https://www.npmjs.com/package/@juwel-development/react-observable-tools">react-observable-tools</ExternalLink>. I includes basic
-  hooks that I use for connecting rxjs with react.</P>
+<P>A good project structure functions like a map, helping developers navigate these elements while maintaining clear boundaries.</P>
 
-<H2>Summary</H2>
-<P>The most important part is to let it involve with your project size, the requirements and your experience. You can start with a simple
-  structure and improve it step by step. Don't take short cuts when writing your code, so focus an writing good and simple components. It
-  will keep the doors open for future refactoring. Follow common rules, especially the 'Single-Responsibility-Principle' and you will be
-  ready for every requirement that might come.</P>
+<H3>Feature Slices</H3>
+<P>A feature slice groups all necessary components, logic, and state management for a specific feature into a single directory. This
+  approach makes it easy to locate related code but can limit reusability.</P>
+<P><strong>Advantages:</strong> This structure keeps everything related to a feature in one place, making it easier to develop and maintain.
+  It also helps teams work in parallel without interfering with unrelated features.</P>
+<P><strong>Tradeoffs:</strong> If features share a lot of logic, duplication may become an issue. It may also be difficult to determine
+  where shared components or utilities should reside.</P>
+
+<H3>Architecture-Based Organization</H3>
+<P>You can structure your project by architecture you decided on. E.g.Clean architecture structures projects into four primary layers, each
+  with a clear responsibility:</P>
+<UnsortedList.Root>
+  <UnsortedList.Item><strong>Presentation Layer:</strong> Contains UI components, views, and routing.</UnsortedList.Item>
+  <UnsortedList.Item><strong>Application Layer:</strong> Contains mapping between your use cases and view models.</UnsortedList.Item>
+  <UnsortedList.Item><strong>Domain Layer:</strong> Contains business entities and use cases logic.</UnsortedList.Item>
+  <UnsortedList.Item><strong>Infrastructure Layer:</strong> Handles API communication, databases, and external services.</UnsortedList.Item>
+</UnsortedList.Root>
+<P><strong>Advantages:</strong> This structure promotes separation of concerns, making it easier to test and maintain. It also enhances
+  scalability and allows for clear ownership of business logic.</P>
+<P><strong>Tradeoffs:</strong> It introduces additional complexity, especially in small projects where simpler structures might suffice.
+  There may also be a learning curve for teams unfamiliar with clean architecture.</P>
+
+<H3>Handling Shared Logic</H3>
+<P>Avoid generic <code>helpers</code> folders where possible. Instead, if a shared module emerges, consider isolating it as a separate
+  package.</P>
+<P>For instance, I maintain a <ExternalLink href="https://www.npmjs.com/package/@juwel-development/react-observable-tools">React Observable
+  Tools</ExternalLink> package containing reusable hooks for integrating RxJS with React. This was extracted from a project to separate my
+  relevant business logic from the logic to make the architecture work.</P>
+
+<H2>Final Thoughts</H2>
+<P>Your project structure should evolve with your application size, requirements, and team experience. Start simple and refine as
+  needed.</P>
+<P>Prioritize clean, maintainable code and follow principles like the Single Responsibility Principle. A thoughtful structure will help
+  future-proof your project, making it easier to scale and adapt to new requirements.</P>
+
