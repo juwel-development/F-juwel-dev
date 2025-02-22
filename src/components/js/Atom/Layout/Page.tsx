@@ -15,6 +15,7 @@ export const Page: FunctionComponent<PropsWithChildren<IProps>> = ({
           <InternalLink to={closeUrl}>
             <button
               type={'button'}
+              aria-label={'Return'}
               className="w-10 h-10 md:w-14 md:h-14 focus:outline-none rounded-md group bg-background-box bg-opacity-60 hover:outline hover:outline-primary-500"
             >
               <div className="block w-5 md:w-7 absolute transform -translate-x-5 md:-translate-x-3.5 -translate-y-0 md:-translate-y-0.5">
