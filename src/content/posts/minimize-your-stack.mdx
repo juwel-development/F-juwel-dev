@@ -1,90 +1,101 @@
 ---
-title: Minimize your stack 📦 What do you really need?
+title: Minimize Your Stack 📦 What Do You Really Need?
 publishedAt: 2025-02-15
-description: Get some ideas on how reduce the complexity of your stack. Reduce the number of libraries and tools you are using and focus on the essentials. Learn how to increase your development time by focussing on the core of your application.
+description: Discover how to reduce the complexity of your tech stack by focusing on essential tools. Learn how to enhance development efficiency by prioritizing the core aspects of your application.
 tags:
-  - frontend
-  - state management
+- tech stack
+- architecture
+- YAGNI
 author: Jens-Uwe Lössl
 draft: false
 ---
 
-import { SortedList } from '../../components/js/Atom/List'
 import { H2, H3, Italic, P, Strong } from '../../components/js/Atom/Typography'
+import { SortedList } from '../../components/js/Atom/List'
 
-<H2>We are developers and we want the newest tech</H2>
-<P>Well, I agree every new tech is appealing and it is always a good idea to test out new framework and technologies.
-  But when deciding what technology suites the project you are building, you need to make sure the tech-stack suites
-  the ambitions and and
-  requirements of your project. But let me tell you something: The best code is the code that does not exist.</P>
+<H2>We Are Developers, and We Love New Tech</H2>
+<P>Let's be honest—new technology is exciting, and testing out the latest frameworks and tools is always tempting. However, when selecting a
+  tech stack for your project, you need to ensure it aligns with your goals and requirements. But let me tell you something: The best code
+  is the code that doesn't exist.</P>
 
-<H2>Customer Centric Thinking</H2>
-<P>The biggest challenge in software development is not to build <Italic>something</Italic>, but to build <Italic>the
-  right thing.</Italic> So before writing the first line of code, put yourself in the mind of the user, and ask
-  yourself:</P>
+<H2>Customer-Centric Thinking</H2>
+<P>The biggest challenge in software development isn’t just building <Italic>something</Italic>, but building <Italic>the right
+  thing.</Italic> Before you write a single line of code, put yourself in the user's shoes and ask:</P>
 
 <SortedList.Root>
-  <SortedList.Item>Who will use this code?</SortedList.Item>
-  <SortedList.Item>In which situation will this person use your software?</SortedList.Item>
-  <SortedList.Item>What wants the user to archive when your user is using your software?</SortedList.Item>
+  <SortedList.Item>Who will use this software?</SortedList.Item>
+  <SortedList.Item>In what situation will they use it?</SortedList.Item>
+  <SortedList.Item>What is their ultimate goal when using it?</SortedList.Item>
 </SortedList.Root>
 
-<P>The better you understand your users, the better you can derive requirements for your software solution, and these
-  are the requirements that matters. For example when the problem that your are solve with your software is for users
-  that are outside in the nature - maybe even without internet connection - a web app is maybe not the right approach.
-  If you want to build an application for people that are working in an office, a web app is maybe the right
-  approach.</P>
+<P>The better you understand your users, the better you can define meaningful requirements. These are the ones that truly matter. For
+  example, if your target users are often outdoors without an internet connection, a web app might not be the right approach. On the other
+  hand, if your users work in an office, a web app could be the perfect fit.</P>
 
-<P>I once was a part of a project that was made for biologists. People, that are collecting animal and plant material
-  in the wilderness and
-  than analysing the collected material in a laboratory. This project need a mobile application (e.g. for entering
-  data of the collected
-  material (when and where is the material collected)) but also a web application (for analysing the collected data).
-  Both applications were
-  different in design and functionality, because the same user was using the applications in different situations,
-  with different
-  intentions.</P>
+<P>I once worked on a project designed for biologists—people collecting plant and animal samples in the wild and later analyzing them in a
+  lab. This required both a mobile app (for data collection in the field) and a web app (for data analysis). These applications had
+  different designs and functionalities because the same users interacted with them in entirely different contexts and with different
+  needs.</P>
 
-<H3>The user does not care about the technology and the code that you are using</H3>
+<H3>Users Don’t Care About Your Tech Stack</H3>
 
-<P>To be honest the only people, who care about the technology that you are using are developers. The end-user is not
-  caring about the code and how well it is structured, but he cares about new features and the stability of the
-  system. So you do not need a micro service architecture, as long as you do not have a user base that is so big that
-  you need to scale your application.</P>
+<P>The only people who care about the technology you use are developers. End users don’t care about how well-structured your code is—they
+  care about new features and system stability. You don’t need a microservices architecture unless your user base is large enough to require
+  scaling.</P>
 
-<P>But what are your users actually care about? Well, it depends on the application that you are building. But if you
-  start small and maybe also have to report to investors. Leave out everything that your are not confident, that it
-  will speed up the development process. In early stages of the product life cycle, you want to be fast and deliver
-  features quickly, so your users will get a better idea in which direction you go. Because the best thing early is to
-  implement a fast feedback loop with your users. So you can validate your ideas and assumptions, this is way more
-  important than using the newest tech.</P>
+<P>So what do your users actually care about? It depends on your application. If you’re in the early stages of product development, focus on
+  delivering features quickly rather than implementing the latest tech trends. Fast feedback loops with users are far more valuable at this
+  stage than using the newest tools.</P>
 
-<H3>But doesn't new technology speed up our workflow?</H3>
-<P>Good point! I am not against anything new, when you start building a project. What I am saying is, you need to be
-  sure about <Strong>why</Strong> you pick it. For example once I was part of a startup, that was very relient on
-  hardware infrastructure. So we choose to deploy our services on AWS - way more expensive than self hosting, isn't
-  it? Well I question this, when you have to take care about your servers by yourself / or hire a DevOps engineer, it
-  would be more expensive than deploying it a cloud provider. But the best thing: As we didn't need to care much about
-  the hardware (besides a lot of configuration🤣), we were able to focus on our daily doing on delivering and building
-  the application for our users.</P>
+<H3>Doesn't New Technology Speed Up Development?</H3>
+<P>Good question! I'm not against adopting new technology, but you should always ask yourself <Strong>why</Strong> you're choosing it. For
+  example, in one startup I worked with, we relied heavily on hardware infrastructure. Instead of self-hosting, we chose AWS—more expensive
+  at first glance but ultimately more cost-effective than managing our own servers or hiring a DevOps engineer. This allowed us to focus on
+  building the application rather than worrying about infrastructure.</P>
 
-<P>My small 'free-time' projects are all hosted on the Google Cloud and use the Google services, like Firebase
-  Database. Is it the best solution? When thinking about cost efficiency? No. Is it the best for my use-case? Maybe
-  also not. But it is a solution that helps me no focus on the development and to build up a value stream for the
-  project. I have a layer in my applications that decouple the database from the rest of the application, so
-  whenever I reached the point to change the infrastructure, I can migrate away from the current stack, I am
-  using.</P>
+<P>For my personal projects, I use Google Cloud and Firebase. Are they the most cost-efficient options? Probably not. Are they the best for
+  my use case? Maybe not. But they let me focus on development without worrying about infrastructure, and since my apps have a database
+  abstraction layer, I can migrate away if needed.</P>
 
-<H3>The best code is the code you don't write</H3>
+<H3>Practical Steps to Simplify Your Tech Stack</H3>
 
-<P>Every code that is written needs (some kind of) maintain. So the less code you need to write - the less afford you will have in the
-  future. Business people know the term TCO - total cost of ownership. The term is describing how expensive it is to own a product. For
-  example: After you bought a car, you still need to pay for insurance, gasoline, repairs and a lot of other stuff. This concept is also the
-  case for software. If you offer a software service to other people, you need to pay for keeping it up to date, you need to fix security
-  issue, update dependencies, pay for the hosting, and more. So often it is cheaper to buy some external software and service and connect it
-  with yours than developing everything by yourself. A lot of 'problems' are also already solved by the Open Source community, so before
-  doing everything by yourself, do some research, if you can use an already existing solution.</P>
+<SortedList.Root>
+  <SortedList.Item>Audit your current stack—identify redundant tools and services.</SortedList.Item>
+  <SortedList.Item>Prioritize essential technologies that directly impact your users.</SortedList.Item>
+  <SortedList.Item>Consider low-code or no-code solutions for non-core functionality.</SortedList.Item>
+  <SortedList.Item>Leverage open-source frameworks and libraries.</SortedList.Item>
+  <SortedList.Item>Use cloud platforms to reduce infrastructure maintenance.</SortedList.Item>
+  <SortedList.Item>Implement a modular architecture for easy scalability.</SortedList.Item>
+</SortedList.Root>
 
-<H3>Final thoughts</H3>
-<P>Whenever you pick a tech stack, try to keep it simple and maintainable. Ask what you really need for success and DON'T FORGET YOUR
-  USERS.</P>
+<H3>Common Pitfalls When Choosing a Tech Stack</H3>
+
+<P>Many developers fall into common traps when selecting their technology stack. Here are some key mistakes to avoid:</P>
+
+<SortedList.Root>
+  <SortedList.Item><Strong>Shiny Object Syndrome</Strong> - Don’t choose tech just because it’s trending.</SortedList.Item>
+  <SortedList.Item><Strong>Over-Engineering</Strong> - Avoid unnecessary complexity that slows down development.</SortedList.Item>
+  <SortedList.Item><Strong>Ignoring Scalability</Strong> - Think long-term but don’t over-optimize for problems you don’t
+    have.</SortedList.Item>
+  <SortedList.Item><Strong>Lack of Documentation</Strong> - Ensure your stack has good documentation and community
+    support.</SortedList.Item>
+</SortedList.Root>
+
+<H3>Frequently Asked Questions</H3>
+
+<H3>How do I know if my tech stack is too complex?</H3>
+<P>If you’re spending more time managing infrastructure and dependencies than developing features, your stack may be overly complex.
+  Simplifying your setup can free up resources for actual product development.</P>
+
+<H3>When should I change my tech stack?</H3>
+<P>Change your stack when it no longer meets business needs, creates maintenance headaches, or significantly slows down development.
+  Otherwise, refactoring and optimizing your current stack may be the better approach.</P>
+
+<H3>Should startups use microservices?</H3>
+<P>Microservices add complexity and should only be used when scaling demands justify them. Most startups benefit from a monolithic or
+  modular approach in the early stages.</P>
+
+<H3>Final Thoughts</H3>
+<P>When choosing a tech stack, keep it simple and maintainable. Focus on what you truly need for success, and most importantly—DON’T FORGET
+  YOUR USERS. By making thoughtful decisions, you can reduce technical debt, improve developer productivity, and build a product that truly
+  serves its audience.</P>
