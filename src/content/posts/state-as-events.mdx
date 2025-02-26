@@ -19,16 +19,31 @@ import { UnsortedList } from '../../components/js/Atom/List'
 <P>'Data is money'—you’ve probably heard this phrase before. It’s true; data is the most valuable asset in the world today. Companies like
   Google, Facebook, and Amazon have built their business models around data.</P>
 <P>Applications, whether web or mobile, revolve around data: displaying it, processing it, and sending it to backends or external systems.
-  The challenge lies in managing data efficiently to provide seamless user experiences.</P>
+  The challenge lies in managing data efficiently to provide seamless user experiences. The ability to process and react to data in
+  real-time is increasingly becoming a differentiator between good and great applications.</P>
+<P>As businesses continue to scale, the need for real-time data processing and event-driven architecture is becoming more evident.
+  Developers and architects must adapt to modern methodologies that enhance application performance, scalability, and user satisfaction.</P>
+
+<H2>A Brief History of Event-Driven Architecture</H2>
+<P>Event-driven architecture (EDA) has been around for decades. It gained prominence in distributed systems, especially in enterprise
+  software, where decoupled communication was necessary. Early implementations appeared in messaging systems, like IBM MQ and Enterprise
+  Service Buses (ESBs), allowing applications to communicate asynchronously.</P>
+<P>With the rise of microservices and real-time applications, event-driven patterns became more popular. Modern frameworks, such as Apache
+  Kafka, RabbitMQ, and cloud-based event buses, enable scalable event processing across various domains. In frontend development, this
+  pattern evolved through state management libraries like Redux, RxJS, and Vuex, providing reactive and declarative approaches to UI
+  updates.</P>
+<P>Today, event-driven principles power real-time messaging apps, collaborative tools, and even IoT ecosystems where devices react
+  dynamically to changes in their environment.</P>
 
 <H2>The CRUD Approach vs. Event-Driven Architecture</H2>
 <P>Many web applications follow a CRUD (Create, Read, Update, Delete) approach: you fetch a resource from the backend, allow the user to
   modify it, and send the updated resource back. This results in UI structures built around data operations—list views, create/update forms,
   and delete actions. For example, if you’re building a blog, a CRUD mindset means focusing on creating, updating, and deleting posts.</P>
-
 <P>However, humans don’t think in terms of updating data. We use applications to accomplish tasks quickly. Wouldn’t it be more intuitive to
   model the application around tasks instead of data manipulations? For example, instead of manually updating post statuses, you could
   display a list of unpublished posts with a ‘Release’ button to quickly publish them.</P>
+<P>Event-driven architecture (EDA) shifts this paradigm by modeling actions as discrete events. Instead of thinking in terms of direct data
+  modifications, developers focus on capturing user intents and allowing the system to react accordingly.</P>
 
 <H2>Modeling Around Events</H2>
 
@@ -62,6 +77,11 @@ const UiComponent = ({ postId }) => {
 };
 ```
 
+<P>This small shift changes how the application is structured. Instead of directly modifying the post’s status, the system captures the
+  user's intent and acts upon it asynchronously.</P>
+<P>By decoupling state changes from UI interactions, applications gain significant performance improvements, reducing re-renders and
+  unnecessary network requests.</P>
+
 <H3>What Happens to These Events?</H3>
 <P>This is where the magic happens: you can handle events however you like. 🚀</P>
 <P>Instead of tightly coupling state changes to UI actions, events allow for greater flexibility. Here are some possibilities:</P>
@@ -70,9 +90,10 @@ const UiComponent = ({ postId }) => {
   <UnsortedList.Item>Send events to analytics tools like <ExternalLink
     href="https://posthog.com/">PostHog.</ExternalLink></UnsortedList.Item>
   <UnsortedList.Item>Log events to the browser console during development.</UnsortedList.Item>
+  <UnsortedList.Item>Trigger workflows that notify other parts of the application.</UnsortedList.Item>
 </UnsortedList.Root>
 <P>Imagine a customer requests a feature: *“When X happens, can you also do Y?”* With an event-driven model, you’re already prepared to
-  handle it efficiently.</P>
+  handle it efficiently without reworking the entire architecture.</P>
 
 <H3>Combining Events for Smarter UI State</H3>
 <P>Consider a loading indicator: in a CRUD-based system, you typically set a `boolean` flag in the application state. With events, you don’t
@@ -88,36 +109,11 @@ const isLoading$ = GlobalEvent$.pipe(
 );
 ```
 
-<H3>Querying Data Efficiently</H3>
-<P>When designing applications, it's crucial to separate querying data from emitting commands. Fortunately, modern technologies allow
-  pushing updates from servers to clients, making data retrieval seamless. A repository pattern might look like this:</P>
-
-```typescript
-import { Observable } from 'rxjs';
-
-interface IPostRepository {
-  readonly Posts$: Observable<Post[]>;
-  readonly Post$: Observable<Post>;
-
-  loadPost(postId: string): void;
-  loadPosts(): void;
-}
-```
-
-<P>Your UI components can subscribe to `Posts$` to reactively display data as it updates.</P>
-
-<H2>When Should You Use Event-Driven Architecture?</H2>
-<P>Not every application needs an event-driven approach. If you’re building a static website with minimal user interactions, a CRUD-based
-  architecture might suffice. However, consider using event-driven architecture in scenarios such as:</P>
-<UnsortedList.Root>
-  <UnsortedList.Item>Applications with high user interactions (e.g., dashboards, collaborative tools).</UnsortedList.Item>
-  <UnsortedList.Item>Systems where multiple sources modify application state (e.g., real-time messaging apps).</UnsortedList.Item>
-  <UnsortedList.Item>Applications requiring reactive state management and asynchronous processing.</UnsortedList.Item>
-</UnsortedList.Root>
-<P>By rethinking state management and structuring applications around events instead of direct data manipulations, you can build more
-  scalable, flexible, and maintainable frontend architectures.</P>
+<P>This pattern allows applications to remain more predictable and avoids unnecessary UI state management.</P>
 
 <H2>Conclusion</H2>
 <P>Moving beyond CRUD-based thinking and embracing event-driven architecture enables applications to be more responsive and adaptable. By
   focusing on *what happens* instead of *how data is updated*, you create a system where business logic is decoupled from UI interactions,
   making your frontend more powerful and resilient.</P>
+<P>Adopting this mindset might require a shift in thinking, but the benefits—better scalability, maintainability, and responsiveness—make it
+  a powerful approach for modern frontend development.</P>
