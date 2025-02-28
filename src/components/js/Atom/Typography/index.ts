@@ -1,3 +1,4 @@
+export { BlockQuote } from './BlockQuote';
 export { ExternalLink } from './ExternalLink';
 export { H1 } from './H1';
 export { H2 } from './H2';
