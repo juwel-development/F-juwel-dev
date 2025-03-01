@@ -16,9 +16,9 @@ type Props = {
 
 const { post } = Astro.props as Props;
 
-const { Content } = await post.render();
+const { Content, remarkPluginFrontmatter } = await post.render();
 ---
 
-<PostLayout title={post.data.title} description={post.data.description} publishedAt={post.data.publishedAt} author={post.data.author}>
+<PostLayout title={post.data.title} description={post.data.description} publishedAt={post.data.publishedAt} author={post.data.author} readingTime={remarkPluginFrontmatter.minutesRead}>
     <Content/>
 </PostLayout>

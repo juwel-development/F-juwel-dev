@@ -14,8 +14,8 @@ const style = cva('text-body-1 py-3 md:py-6', {
 export const H1 = forwardRef<
   HTMLHeadingElement,
   PropsWithChildren<VariantProps<typeof style>>
->(({ children, ...props }, ref) => (
-  <h1 ref={ref} className={style(props)}>
+>(({ children, color = 'primary', ...props }, ref) => (
+  <h1 ref={ref} className={style({ ...props, color })}>
     {children}
   </h1>
 ));

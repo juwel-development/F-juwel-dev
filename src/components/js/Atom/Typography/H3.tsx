@@ -13,8 +13,8 @@ const style = cva('text-xl md:text-3xl py-3 md:py-6', {
 export const H3 = forwardRef<
   HTMLHeadingElement,
   PropsWithChildren<VariantProps<typeof style>>
->(({ children, ...props }, ref) => (
-  <h3 ref={ref} className={style(props)}>
+>(({ children, color = 'primary', ...props }, ref) => (
+  <h3 ref={ref} className={style({ ...props, color })}>
     {children}
   </h3>
 ));

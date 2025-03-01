@@ -1,0 +1,106 @@
+---
+title: Absence of Software Architecture 🏗️ Why Software Architecture Matters
+publishedAt: 2025-03-01
+description: Discover how to reduce the complexity of your tech stack by focusing on essential tools. Learn how to enhance development efficiency by prioritizing the core aspects of your application.
+tags:
+- tech stack
+- architecture
+- YAGNI
+author: Jens-Uwe Lössl
+draft: true
+---
+import { H2, H3, H4, P } from '../../components/js/Atom/Typography'
+
+<P>Did you ever work on a software project where something felt off, but you couldn’t quite pinpoint what it was?</P>
+
+<P>Everything seems to be moving forward—features are being developed, tickets are getting closed, and deployments happen regularly. Yet,
+  over time, friction begins to build. Decisions become inconsistent, refactoring becomes a frequent task, and onboarding new developers
+  takes longer than expected. The codebase seems to resist change rather than enabling it.</P>
+
+<P>These are often signs of a missing or eroding software architecture. When architecture is absent, foundational decisions are made
+  implicitly, rather than through deliberate design. The result? A system that evolves unpredictably, accumulating complexity that slows
+  development and increases long-term costs.</P>
+
+<H2>How to Recognize the Absence of Architecture</H2>
+<H3>Knowledge Silos</H3>
+<P>I once worked at a company where I began documenting the architecture of the system. During this process, I discovered two services that
+  appeared to serve the same purpose. So, I asked: “When a new feature is being implemented, how do you decide which service to use?” The
+  response I got was: “Oh, that’s easy. If Paul implements the feature, it will go into Service A. If John is implementing it, it will go
+  into Service B.”</P>
+
+<P>Let’s pause for a moment and think: What happens if John or Paul leaves the company? A new developer would then need to understand both
+  services in order to comprehend the system and modify an existing feature. And also as there was not a team responsible for maintaining
+  these services, the knowledge was only in the heads of John or Paul.</P>
+
+<P>This answer also told me, that decision were made based on pure accident (whoever started to work on the feature first), rather than
+  aligning with the requirements of the system.</P>
+
+<H3>Accidental Discovered Requirements</H3>
+<P>At the same company, another challenge emerged when they developed a service to connect their internal systems and external APIs through
+  a centralized communication broker. The idea was promising: provide external services with a simple REST API and allow them to subscribe
+  to events. However, instead of leveraging an existing message bus solution, the company opted to build one in-house.</P>
+
+<P>After two years of development, the service was finally production-ready. The developers had thought through every technical
+  detail—recovery mechanisms, event subscriptions, and all the functionality a message bus should provide. The system worked flawlessly, at
+  least from a purely technical standpoint. But when it came time to implement real-world use cases—such as sharing user data across all
+  internal services—the entire concept started to unravel.</P>
+
+<P>What they hadn't considered was that different domains have different needs. The service was designed with a single database to store all
+  the data objects it needed, but a "user" in one system didn’t necessarily mean the same thing in another. Across various domains, users
+  could be employees, customers, creditors, or debtors. One domain didn't even have a "user" concept at all—it only worked with "employment
+  contracts."</P>
+
+<P>This led to a cascade of internal meetings, where product managers and developers from each domain had to sit down, explain their
+  perspectives, and attempt to design a unified data model that worked for everyone. The process was slow, complex, and
+  frustrating—especially for those who had to compromise on their domain’s autonomy. What was once a well-defined data model within each
+  domain was now entangled in cross-team dependencies. Suddenly, making changes required understanding how every other domain worked,
+  significantly increasing cognitive load and development time.</P>
+
+<P>After multiple release delays and the hiring of a new CTO, the company ultimately decided to shut down the project entirely. What was
+  meant to streamline integration had instead created an unsustainable complexity. Years of effort and a significant financial investment
+  were wasted—all because no one had considered the architectural implications before development began.</P>
+
+<H3>Symptoms of Absent Software Architecture</H3>
+<P>When software architecture is absent, the effects often manifest subtly at first but grow increasingly disruptive over time. Here are
+  some indicators.</P>
+
+<H4>Increasing Cross-Team Dependencies</H4>
+<P>In the absence of architectural planning, teams frequently discover too late that their work depends on other teams in unexpected ways.
+  Instead of being able to develop and deploy independently, they must coordinate constantly, leading to slowdowns, misalignment, and
+  frustration. This is particularly problematic in organizations aiming for autonomous teams and continuous delivery.</P>
+
+<H4>Inconsistent Technology Choices</H4>
+<P>When there's no architectural vision, teams and individuals often make technology decisions in isolation. This leads to a patchwork of
+  different frameworks, libraries, and patterns coexisting within the same system. For example, one part of the codebase might use one ORM
+  while another relies on raw SQL queries. Frontend applications might be built using different component libraries, causing inconsistent
+  user experiences. These inconsistencies create unnecessary cognitive load for developers and increase maintenance complexity.</P>
+
+<H4>High Onboarding Effort</H4>
+<P>A well-architected system should be easy to understand and navigate. When new developers join a project with no clear architectural
+  guidelines, they must rely on tribal knowledge and reverse-engineering existing code to figure out how things work. This drastically
+  increases onboarding time, making it difficult for teams to grow efficiently. The more effort it takes to onboard a new developer, the
+  stronger the sign that architectural decisions were made without a clear structure.</P>
+
+<H4>Scaling Problems Emerge Unexpectedly</H4>
+<P>Without architectural foresight, scaling challenges often surface in unexpected ways. A system might work fine with a small user base but
+  struggle as load increases. Bottlenecks appear in areas no one had anticipated because decisions about data flow, service communication,
+  or state management were made ad hoc. Addressing these scaling issues later in development often requires extensive rework, leading to
+  delays and budget overruns.</P>
+
+<H4>Constant Refactoring Without Clear Direction</H4>
+<P>Refactoring is a natural part of software development, but in the absence of a solid architectural foundation, it becomes an endless
+  cycle. Developers find themselves constantly reworking the same areas of code, not because of iterative improvements, but because
+  foundational design choices were never made—or were made inconsistently. Without a guiding structure, every attempt to clean up the code
+  leads to new inconsistencies, making long-term maintenance a nightmare.</P>
+
+<H4>Development Gets Unpredictable</H4>
+<P>When architecture is absent, development becomes unpredictable. Estimates are unreliable, and deadlines are missed. Teams struggle to
+  deliver features on time, as side effects appear. The lack of a clear architectural vision makes it difficult to predict
+  how changes will impact the system, leading to a constant state of firefighting and reactive decision-making.</P>
+
+
+<H2>Why Does Architecture Disappear?</H2>
+
+<H2>The Hidden Costs of No Architecture</H2>
+
+<H2>Conclusion</H2>
