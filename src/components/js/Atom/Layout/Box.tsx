@@ -3,12 +3,12 @@ import { cva } from 'class-variance-authority';
 import type { FunctionComponent, PropsWithChildren } from 'react';
 
 const box = cva(
-  'w-64 h-32 bg-background-box rounded-lg shadow p-3 bg-opacity-60 motion-translate-y-in-[0%] motion-translate-x-in-[-5%] motion-opacity-in-[0%] motion-blur-in-[3px] motion-duration-[0.80s]/opacity motion-duration-[0.8s]/blur',
+  'w-64 h-32 bg-background-box rounded-lg shadow-sm p-3 bg-opacity-60 motion-translate-y-in-0 motion-translate-x-in-[-5%] motion-opacity-in-[0%] motion-blur-in-[3px] motion-duration-[0.80s]/opacity motion-duration-[0.8s]/blur',
   {
     variants: {
       outline: {
-        true: 'outline outline-4 outline-primary-500',
-        hover: 'hover:outline hover:outline-4 hover:outline-primary-500',
+        true: 'outline-solid outline-4 outline-primary-500',
+        hover: 'hover:outline-solid hover:outline-4 hover:outline-primary-500',
       },
     },
     defaultVariants: {

@@ -16,7 +16,7 @@ export const Page: FunctionComponent<PropsWithChildren<IProps>> = ({
             <button
               type={'button'}
               aria-label={'Return'}
-              className="w-10 h-10 md:w-14 md:h-14 focus:outline-none rounded-md group bg-background-box bg-opacity-60 hover:outline hover:outline-primary-500"
+              className="w-10 h-10 md:w-14 md:h-14 focus:outline-hidden rounded-md group bg-background-box bg-opacity-60 hover:outline-solid hover:outline-primary-500"
             >
               <div className="block w-5 md:w-7 absolute transform -translate-x-5 md:-translate-x-3.5 -translate-y-0 md:-translate-y-0.5">
                 <span className="block absolute h-0.5 w-6 md:w-7 text-contrast-500 bg-current transform transition duration-500 ease-in-out rotate-45 translate-x-7" />
