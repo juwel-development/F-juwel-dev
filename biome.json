@@ -1,20 +1,25 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.8.1/schema.json",
-	"organizeImports": {
-		"enabled": true
+	"$schema": "https://biomejs.dev/schemas/2.1.1/schema.json",
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
 	},
 	"linter": {
 		"enabled": true,
 		"rules": {
 			"recommended": true
 		},
-		"ignore": ["**/node_modules/**", "**/dist/**", "**/.astro/**"]
+		"includes": ["**", "!**/node_modules/**", "!**/dist/**", "!**/.astro/**"]
 	},
 	"formatter": {
 		"enabled": true,
-		"ignore": ["**/node_modules/**", "**/dist/**", "**/.astro/**"]
+		"includes": ["**", "!**/node_modules/**", "!**/dist/**", "!**/.astro/**"]
 	},
 	"javascript": {
+		"globals": ["Astro"],
 		"formatter": {
 			"quoteStyle": "single",
 			"indentStyle": "space",

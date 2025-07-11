@@ -1,0 +1,255 @@
+---
+import { Container } from '../../components/js/Atom/Layout/Container';
+import { Flex } from '../../components/js/Atom/Layout/Flex';
+import { Table } from '../../components/js/Atom/Table';
+import { Tag } from '../../components/js/Atom/Tag';
+import {
+  ExternalLink,
+  H2,
+  Italic,
+  P,
+  Strong,
+} from '../../components/js/Atom/Typography';
+import { ExternalLinkBox } from '../../components/js/Molecule/ExternalLinkBox';
+
+import { FullScreenSection } from '../../components/js/Molecule/FullScreenSection';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="My Work"
+            description="Explore Juwel Dev's software development services. Jens, a seasoned full-stack developer, delivers scalable and maintainable solutions tailored to user needs and business goals. Discover innovative projects in event-based systems, cloud-ready backends, and future-ready architectures.">
+  <div
+    class="absolute top-64 right-0 w-96 h-1/2 -z-10 hidden lg:block rounded-l-3xl bg-cover shadow-2xl"
+    style={{ backgroundImage: "url(/img/jensi.webp)" }}
+  />
+  <FullScreenSection heading="My work">
+    <Container>
+      <div class="lg:w-3/6 xl:w-4/6">
+        <P size="2xl">
+          <Strong>
+            Hi, I’m Jens, and I craft software.
+          </Strong>
+        </P>
+        <div
+          class="lg:hidden h-56 w-56 bg-cover rounded-full shadow-2xl mx-auto my-6"
+          style={{ backgroundImage: "url(/img/jensi.webp)" }}
+        />
+        <P>
+          I am a senior software engineer with strong architectural responsibility and a deep focus on sustainable
+          systems.
+        </P>
+        <P>
+          Throughout my career, I’ve worked across startups and enterprises to design and implement distributed systems,
+          event-driven architectures, and cloud-native applications. Over time, my role has grown from implementation
+          toward strategic design: making technical decisions that support long-term goals, enabling teams, and shaping
+          maintainable structures.
+        </P>
+        <P>
+          Whether introducing CQRS, modularizing frontend codebases, or mentoring juniors – I care about building
+          systems that scale technically *and* organizationally.
+        </P>
+      </div>
+    </Container>
+  </FullScreenSection>
+  <FullScreenSection heading="Projects">
+    <Container>
+      <Table.Root>
+        <Table.Body>
+          <Table.Row>
+            <Table.Cell>
+              <P>
+                <Strong>Veda GmbH</Strong>
+              </P>
+              <P>
+                <Italic>05/2024 - present</Italic>
+              </P>
+            </Table.Cell>
+            <Table.Cell>
+              <P>VEDA is offering a HR plattform, to help companies with on- and
+                offboarding, time management and payroll.</P>
+              <P>I took key responsibility in training and mentoring junior
+                developers, to reduce business risk and increase development
+                output.</P>
+              <P>I evaluated the software development process and architecture
+                to assist management in company acquisitions.</P>
+              <P>In a newly created feature team, we established a lean process,
+                that is based on daily collaboration.</P>
+              <P>We introduced a training format, called "Sharpening the knife",
+                to help teams to reach their maximum potential.</P>
+              <Tag.Root>
+                <Tag.Item>React</Tag.Item>
+                <Tag.Item>Java</Tag.Item>
+                <Tag.Item>Spring</Tag.Item>
+                <Tag.Item>Db2 / IBM AS/400</Tag.Item>
+                <Tag.Item>Clean Architecture</Tag.Item>
+                <Tag.Item>Domain Driven Design</Tag.Item>
+                <Tag.Item>Mentoring</Tag.Item>
+              </Tag.Root>
+            </Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>
+              <P>
+                <Strong>nuwork</Strong>
+              </P>
+              <P>
+                <Italic>09/2023 - 04/2024</Italic>
+              </P>
+            </Table.Cell>
+            <Table.Cell>
+              <P>nuwork is dedicated to combine freedom and commitment for a people-centered work environment.</P>
+              <P>
+                Besides the development of the platform, I am responsible for the technical concept of a new product
+                called &quot;nutopia&quot; - a digital mountain landscape, where you can meet your colleagues and
+                motivate to reach your goals.
+              </P>
+              <P>We were able to design a solution based on React and Lottie Files for interactive animations.</P>
+              <P>
+                Also, we started to establish evidence based product development based on the book
+                &quot;Evidence-Guided: Creating High Impact Products in the Face of Uncertainty&quot; by Itamar
+                Gilad.
+              </P>
+              <Tag.Root>
+                <Tag.Item>StartUp</Tag.Item>
+                <Tag.Item>React</Tag.Item>
+                <Tag.Item>NodeJs</Tag.Item>
+                <Tag.Item>NestJs</Tag.Item>
+                <Tag.Item>PostgreSQL</Tag.Item>
+                <Tag.Item>Clean Architecture</Tag.Item>
+                <Tag.Item>Prove of Concept</Tag.Item>
+              </Tag.Root>
+            </Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>
+              <P>
+                <Strong>spcfy</Strong>
+              </P>
+              <P>
+                <Italic>08/2022 - 07/2023</Italic>
+              </P>
+            </Table.Cell>
+            <Table.Cell>
+              <P>
+                Have you ever wondered which biological footprint your food has? By collecting soil samples and DNA
+                sequencing, you are able to get a detailed insight into the nature-impact of your food.
+              </P>
+              <P>
+                Within one year we were able to develop a MVP, that is able to run the required bioinformatics
+                pipelines in the cloud.
+              </P>
+              <P>
+                We were a team of two developers and were responsible for the whole software development process. We
+                gathered requirements by stakeholders, designed the architecture, implemented the software and
+                deployed it to the cloud.
+              </P>
+              <Tag.Root>
+                <Tag.Item>StartUp</Tag.Item>
+                <Tag.Item>React</Tag.Item>
+                <Tag.Item>.Net Core</Tag.Item>
+                <Tag.Item>PostgreSQL</Tag.Item>
+                <Tag.Item>AWS</Tag.Item>
+                <Tag.Item>Requirements Engineering</Tag.Item>
+                <Tag.Item>Clean Architecture</Tag.Item>
+                <Tag.Item>Domain Driven Design</Tag.Item>
+              </Tag.Root>
+            </Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>
+              <P>
+                <Strong>Town & Country Haus</Strong>
+              </P>
+              <P>
+                <Italic>12/2020 - 07/2022</Italic>
+              </P>
+            </Table.Cell>
+            <Table.Cell>
+              <P>
+                The main task at Town&Country was to digitalize the construction industry based on the BIM approach.
+              </P>
+              <P>
+                Due to the high traffic and long-running calculations, I was confronted with designing a highly
+                scalable solution together with a software architect. We decided to develop an event-based system
+                that would eventually allow homebuyers and planners to design their dream homes.
+              </P>
+              <P>
+                I was responsible for the CI/CD process to publish our internal nuget packages and Docker images to
+                JFrog Artifactory.
+              </P>
+              <Tag.Root>
+                <Tag.Item>React</Tag.Item>
+                <Tag.Item>CQRS</Tag.Item>
+                <Tag.Item>.Net Core</Tag.Item>
+                <Tag.Item>Apache Kafka</Tag.Item>
+                <Tag.Item>Revit</Tag.Item>
+                <Tag.Item>Clean Architecture</Tag.Item>
+                <Tag.Item>Domain Driven Design</Tag.Item>
+                <Tag.Item>Protobufs</Tag.Item>
+              </Tag.Root>
+            </Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>
+              <P>
+                <Strong>HiCo Group</Strong>{" "}
+              </P>
+              <P>
+                <Italic>04/2017 - 11/2020</Italic>
+              </P>
+            </Table.Cell>
+            <Table.Cell>
+              <P>
+                <ExternalLink href="https://www.truechart.com/">TRUECHART</ExternalLink>
+                is a chart solution, to
+                visualize business reports based on the IBCS standard.
+              </P>
+              <P>
+                We started to refactor our frontend to React. Also I worked in the backend, with the goal to
+                simplify the code. At the end I had the responsibility for porting TRUECHART4QlikView to our newly
+                created core chart-platform.
+              </P>
+              <Tag.Root>
+                <Tag.Item>React</Tag.Item>
+                <Tag.Item>Java</Tag.Item>
+                <Tag.Item>Hibernate</Tag.Item>
+                <Tag.Item>Ivy</Tag.Item>
+                <Tag.Item>SVG</Tag.Item>
+                <Tag.Item>TypeScript</Tag.Item>
+                <Tag.Item>MSSQL</Tag.Item>
+                <Tag.Item>MySQL</Tag.Item>
+              </Tag.Root>
+            </Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      </Table.Root>
+    </Container>
+  </FullScreenSection>
+  <FullScreenSection heading="Certifications">
+    <Container>
+      <H2>iSAQB CPSA-F</H2>
+       <iframe src="https://docs.google.com/gview?url=https://juwel.dev/pdf/1738794619489.pdf&embedded=true" style="width:718px; height:700px;" frameborder="0"></iframe>
+    </Container>
+  </FullScreenSection>
+  <FullScreenSection heading="Social Media - Find me on the internet">
+    <Container>
+      <Flex.Root justify="around">
+        <Flex.Item>
+          <ExternalLinkBox to="https://www.linkedin.com/in/jens-uwe-lössl">
+            <P align="center">LinkedIn</P>
+          </ExternalLinkBox>
+        </Flex.Item>
+        <Flex.Item>
+          <ExternalLinkBox to="https://github.com/juwel-dev">
+            <P align="center">Github</P>
+          </ExternalLinkBox>
+        </Flex.Item>
+        <Flex.Item>
+          <ExternalLinkBox to="https://www.npmjs.com/~juwel-dev">
+            <P align="center">npm</P>
+          </ExternalLinkBox>
+        </Flex.Item>
+      </Flex.Root>
+    </Container>
+  </FullScreenSection>
+</BaseLayout>

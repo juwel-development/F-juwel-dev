@@ -7,4 +7,5 @@ export { H4 } from './H4';
 export { InternalLink } from './InternalLink';
 export { Italic } from './Italic';
 export { P } from './P';
+export { Span } from './Span';
 export { Strong } from './Strong';

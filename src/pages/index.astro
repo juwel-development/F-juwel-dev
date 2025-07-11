@@ -1,13 +1,11 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-
 import { Container } from '../components/js/Atom/Layout/Container';
 import { Flex } from '../components/js/Atom/Layout/Flex';
 import { Logo } from '../components/js/Atom/Logo/Logo';
-import { H1 } from '../components/js/Atom/Typography';
-import { P } from '../components/js/Atom/Typography';
+import { H1, P } from '../components/js/Atom/Typography';
 import { FullScreenSection } from '../components/js/Molecule/FullScreenSection';
 import { LinkBox } from '../components/js/Molecule/LinkBox';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout description="Explore Juwel Dev's portfolio of software projects and insights on software development, software architecture, coding best practices, and tech knowledge.">
@@ -24,19 +22,13 @@ import { LinkBox } from '../components/js/Molecule/LinkBox';
     <Container>
       <Flex.Root justify="around">
         <Flex.Item>
-          <LinkBox to="/software-development">
-            <P align="center">Software development</P>
-          </LinkBox>
-        </Flex.Item>
-        <Flex.Item>
           <LinkBox to="/software-architecture">
-            <P align="center">Software architecture </P>
+            <P align="center">Software architecture</P>
           </LinkBox>
         </Flex.Item>
         <Flex.Item>
-          <LinkBox>
-            <P align="center">Technology</P>
-            <P align="center">(coming soon)</P>
+          <LinkBox to="/my-work">
+            <P align="center">My work</P>
           </LinkBox>
         </Flex.Item>
       </Flex.Root>

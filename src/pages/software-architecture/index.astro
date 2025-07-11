@@ -1,13 +1,11 @@
 ---
 import '../../components/astro/GlobalStyle.astro';
 import { getCollection } from 'astro:content';
-
-import { FullScreenSection } from '../../components/js/Molecule/FullScreenSection';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-
 import { Container } from '../../components/js/Atom/Layout/Container';
 import { Flex } from '../../components/js/Atom/Layout/Flex';
+import { FullScreenSection } from '../../components/js/Molecule/FullScreenSection';
 import { LinkBox } from '../../components/js/Molecule/LinkBox';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const allPosts = (await getCollection('posts'))
   .filter((post) => post.data.draft !== true)

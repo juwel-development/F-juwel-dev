@@ -1,6 +1,6 @@
 import type { VariantProps } from 'class-variance-authority';
 import { cva } from 'class-variance-authority';
-import { type PropsWithChildren, forwardRef } from 'react';
+import { forwardRef, type PropsWithChildren } from 'react';
 import { fontVariant } from './fontVariant';
 
 const style = cva('text-lg md:text-2xl py-2 md:py-4', {
