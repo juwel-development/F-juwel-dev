@@ -19,6 +19,11 @@
 		},
 		"includes": ["**", "!**/node_modules/**", "!**/dist/**", "!**/.astro/**"]
 	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
+	},
 	"formatter": {
 		"enabled": true,
 		"includes": ["**", "!**/node_modules/**", "!**/dist/**", "!**/.astro/**"]

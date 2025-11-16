@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@plugin 'tailwindcss-motion';
+@plugin "tailwindcss-motion";
 
 @theme {
 	--color-primary-100: #f2f6f8;
