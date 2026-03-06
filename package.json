@@ -14,7 +14,7 @@
 	"dependencies": {
 		"@astrojs/mdx": "^4.0.8",
 		"@astrojs/react": "^4.2.0",
-		"@astrojs/sitemap": "^3.1.4",
+		"@astrojs/sitemap": "^3.7.0",
 		"@fontsource/lato": "^5.0.21",
 		"@heroicons/react": "^2.0.17",
 		"@tailwindcss/vite": "^4.2.1",
