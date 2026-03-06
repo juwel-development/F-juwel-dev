@@ -27,7 +27,7 @@
 		"react-dom": "^19.0.0",
 		"reading-time": "^1.5.0",
 		"rxjs": "^7.4.0",
-		"tailwindcss": "^4.1.8",
+		"tailwindcss": "^4.2.1",
 		"typescript": "^5.4.5"
 	},
 	"devDependencies": {
