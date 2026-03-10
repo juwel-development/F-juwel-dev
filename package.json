@@ -12,9 +12,9 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/mdx": "^4.0.8",
+		"@astrojs/mdx": "^4.3.14",
 		"@astrojs/react": "^4.2.0",
-		"@astrojs/sitemap": "^3.7.0",
+		"@astrojs/sitemap": "^3.7.1",
 		"@fontsource/lato": "^5.0.21",
 		"@heroicons/react": "^2.0.17",
 		"@tailwindcss/vite": "^4.2.1",
@@ -31,7 +31,7 @@
 		"typescript": "^5.4.5"
 	},
 	"devDependencies": {
-		"@astrojs/check": "^0.9.3",
+		"@astrojs/check": "^0.9.7",
 		"@biomejs/biome": "^2.4.6",
 		"tailwindcss-motion": "^1.0.0"
 	}
