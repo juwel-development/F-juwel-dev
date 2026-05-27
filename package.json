@@ -32,7 +32,7 @@
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.9.9",
-		"@biomejs/biome": "^2.4.15",
+		"@biomejs/biome": "^2.4.16",
 		"tailwindcss-motion": "^1.0.0"
 	}
 }
