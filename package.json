@@ -31,7 +31,7 @@
 		"typescript": "^5.4.5"
 	},
 	"devDependencies": {
-		"@astrojs/check": "^0.9.9",
+		"@astrojs/check": "^0.9.10",
 		"@biomejs/biome": "^2.5.5",
 		"tailwindcss-motion": "^1.0.0"
 	}
