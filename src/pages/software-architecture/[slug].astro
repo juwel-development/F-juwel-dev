@@ -1,13 +1,13 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import PostLayout from '../../layouts/PostLayout.astro';
 
 export const getStaticPaths = async () => {
   const posts = await getCollection('posts');
   return posts
     .filter((post) => post.data.draft !== true)
-    .map((post) => ({ params: { slug: post.slug }, props: { post } }));
+    .map((post) => ({ params: { slug: post.id }, props: { post } }));
 };
 
 type Props = {
@@ -16,7 +16,7 @@ type Props = {
 
 const { post } = Astro.props as Props;
 
-const { Content, remarkPluginFrontmatter } = await post.render();
+const { Content, remarkPluginFrontmatter } = await render(post);
 ---
 
 <PostLayout title={post.data.title} tags={post.data.tags} description={post.data.description} publishedAt={post.data.publishedAt} author={post.data.author} readingTime={remarkPluginFrontmatter.minutesRead}>
